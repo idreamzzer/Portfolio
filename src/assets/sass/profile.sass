@@ -1,0 +1,54 @@
+@import "vars"
+@import "fonts"
+
+.profile
+  width: 100%
+  height: 100%
+
+  display: flex
+  flex-direction: column
+  align-items: center
+
+  color: darken($accent-color, 60%)
+  font-family: "Comfortaa"
+
+  &__avatar
+    width: 150px
+    height: 150px
+
+    margin-top: 20px
+    margin-bottom: 10px
+
+    background: darken($accent-color, 40%)
+    border: 2px solid #fff
+    border-radius: 50%
+
+  &__nickname
+    font-weight: bold
+    font-size: 20px
+
+  &__twittername
+    margin-bottom: 15px
+
+  &__link
+    font-size: 14px
+    font-style: italic
+    color: darken($accent-color, 40%)
+    text-decoration: none
+    transition: all .3s
+    &:hover
+      color: darken($accent-color, 30%)
+    &:active
+      color: darken($accent-color, 50%)
+
+  &__fullname
+    font-size: 22px
+    margin: 0 0 10px
+
+  &__bio
+    font-size: 16px
+    flex-grow: 1
+
+  &__social
+    width: 100%
+    margin-bottom: 20px

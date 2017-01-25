@@ -1,0 +1,44 @@
+@import "vars"
+
+@import "_font-awesome.sass"
+
+.social
+  display: flex
+  height: inherit
+  width: 100%
+  &__list
+    width: 100%
+
+    display: flex
+    justify-content: center
+    align-items: center
+
+    padding: 0
+    margin: 0
+
+    list-style-type: none
+
+  &__item
+    margin-right: 10px
+    box-shadow: 0px 0px 10px darken($accent-color, 10%)
+    border-radius: 50%
+    &:last-child
+      margin-right: 0
+
+  &__link
+    width: 40px
+    height: 40px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: darken($accent-color, 30%)
+    background: darken($accent-color, 15%)
+    border-radius: 50%
+    text-decoration: none
+
+    &:hover
+      background: darken($accent-color, 12%)
+    &:active
+      background: darken($accent-color, 18%)
+
+    i

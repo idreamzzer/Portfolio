@@ -1,0 +1,30 @@
+@import "vars"
+
+.card
+  width: 700px
+  height: 400px
+  position: relative
+
+  background: $card-color
+
+  box-shadow: 0px 0px 200px darken($accent-color, 25%)
+
+  border-radius: 21px
+
+  &__side
+    height: 100%
+    position: absolute
+    top: 0
+
+  &__side--left
+    width: 40%
+    left: 0
+    background: darken($accent-color, 5%)
+    border-top-left-radius: 19px
+    border-bottom-left-radius: 19px
+
+  &__side--right
+    width: 60%
+    right: 0
+    border-top-right-radius: 20px
+    border-bottom-right-radius: 20px
