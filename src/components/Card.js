@@ -25,7 +25,7 @@ class Card extends React.Component {
     return (<div className="card" style={styles.card}>
 
       <div className="card__side card__side--left" style={styles.sideLeft}>
-        <Profile color={this.props.color} avatar={this.props.avatar} />
+        <Profile color={this.props.color} avatar={this.props.avatar} socials={this.props.socials} />
       </div>
 
       <div className="card__side card__side--right">

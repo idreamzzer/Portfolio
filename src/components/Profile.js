@@ -5,9 +5,6 @@ import Social from './Social'
 
 import '../assets/sass/profile.sass'
 
-const SOCIALS = [{href: 'https://twitter.com/idreamzzer', className: 'twitter'}, {href: 'https://www.facebook.com/uskov.alx', className: 'facebook'}]
-
-
 class Profile extends React.Component {
 
   render() {
@@ -36,7 +33,7 @@ class Profile extends React.Component {
         <h2 className="profile__fullname">Усков Алексей</h2>
         <p className="profile__bio">Web-разработчик</p>
         <div className="profile__social">
-          <Social socials={SOCIALS} color={this.props.color} />
+          <Social socials={this.props.socials} color={this.props.color} />
         </div>
       </div>
     );

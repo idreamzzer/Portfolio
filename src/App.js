@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
 import tinycolor from 'tinycolor2'
-import ColorPicker from 'react-color-picker'
-import 'react-color-picker/index.css'
 
 import Card from './components/Card'
+import ColorPicker from './components/ColorPicker'
 
 import './assets/sass/main.sass'
 
-import avatar from './assets/img/avatar.jpg'
+import AVATAR from './assets/img/avatar.jpg'
+
+
+const SOCIALS = [
+  {href: 'https://twitter.com/idreamzzer', className: 'twitter'},
+  {href: 'https://vk.com/dreamzzer', className: 'vk'},
+  {href: 'https://github.com/idreamzzer', className: 'github'},
+  {href: 'mailto:idreamzzer@gmail.com', className: 'envelope-o'}
+]
+
+
+
 
 class App extends Component {
 
@@ -15,28 +25,38 @@ class App extends Component {
     super(props)
 
     this.state = {
-      color: '#99d5e0'
+      color: ''
     }
   }
 
-  onDrag(color, c) {
-    this.setState({
-      color
-    })
+  componentDidMount() {
+    if (!this.state.color && localStorage.getItem('color')) {
+      this.setState({color: localStorage.getItem('color')})
+    }
+  }
+
+  onChangeColor(color) {
+    this.setState({color})
+    localStorage.setItem('color', color)
   }
 
   render() {
     let color = this.state.color
+
+    let styles = {
+      main: {
+        background: `linear-gradient(to top right, ${color}, ${tinycolor(color).lighten(20).toString()})`
+      }
+    }
+
     return (
       <div className="App">
 
-        <div className="main" style={{background: `linear-gradient(to top right, ${color}, ${tinycolor(color).lighten(20).toString()})`}} >
+        <div className="main" style={styles.main} >
 
-          <div className="color-picker">
-            <ColorPicker value={color} onDrag={this.onDrag.bind(this)} />
-          </div>
+          <ColorPicker color={color} onChangeColor={this.onChangeColor.bind(this)} />
 
-          <Card color={color} avatar={avatar} />
+          <Card color={color} avatar={AVATAR} socials={SOCIALS} />
         </div>
 
       </div>

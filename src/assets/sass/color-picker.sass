@@ -1,0 +1,148 @@
+.react-color-picker,
+.react-color-picker__saturation-spectrum,
+.react-color-picker__hue-spectrum
+  box-sizing: border-box
+
+.react-color-picker *,
+.react-color-picker *:before,
+.react-color-picker *:after,
+.react-color-picker__saturation-spectrum *,
+.react-color-picker__saturation-spectrum *:before,
+.react-color-picker__saturation-spectrum *:after,
+.react-color-picker__hue-spectrum *,
+.react-color-picker__hue-spectrum *:before,
+.react-color-picker__hue-spectrum *:after
+  box-sizing: border-box
+
+.react-color-picker__saturation-spectrum,
+.react-color-picker__hue-spectrum
+  position: relative
+  display: inline-block
+
+.react-color-picker__saturation-white,
+.react-color-picker__saturation-black
+  position: relative
+  width: 100%
+  height: 100%
+
+.react-color-picker__saturation-white
+  background: -webkit-linear-gradient(left, #fff, rgba(204, 154, 129, 0))
+  background: linear-gradient(to right, #fff, rgba(204, 154, 129, 0))
+
+.react-color-picker__saturation-black
+  background: -webkit-linear-gradient(bottom, #000, rgba(204, 154, 129, 0))
+  background: linear-gradient(to top, #000, rgba(204, 154, 129, 0))
+
+.react-color-picker__saturation-spectrum
+  cursor: pointer
+
+.react-color-picker__saturation-drag
+  display: none
+  border: 1px solid white
+  border-radius: 10px
+  position: absolute
+  top: 0px
+  left: 0px
+.react-color-picker__saturation-drag .react-color-picker__saturation-inner,
+.react-color-picker__saturation-drag .react-color-picker__hue-inner
+  position: relative
+  width: 100%
+  height: 100%
+  border: 1px solid black
+  border-radius: 10px
+
+.react-color-picker__hue-spectrum
+  background: -webkit-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%)
+  background: linear-gradient(to bottom, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%)
+  cursor: pointer
+  margin-left: 0!important
+  .react-color-picker__hue-spectrum .react-color-picker__hue-drag
+    display: none
+    position: absolute
+    top: 0px
+    left: 0px
+    width: 100%
+    border: 1px solid #000
+
+.react-color-picker--theme-default
+  color: inherit
+
+// custom styles
+
+@import "./_font-awesome"
+@import "./vars"
+@import "fonts"
+
+.react-color-picker__saturation-spectrum
+  display: none
+
+.color-picker
+  display: flex
+  flex-direction: column
+
+  &__handler
+    display: flex
+    align-items: center
+    margin-bottom: 10px
+    &:hover
+      .color-picker__button i
+        color: darken($accent-color, 30%)
+    &:active
+      .color-picker__button i
+        color: darken($accent-color, 50%)
+
+
+  &__button
+    background: transparent
+    border: 0
+    outline: none
+    padding: 0
+    margin: 0 10px 0 0
+    color: darken($accent-color, 40%)
+    cursor: pointer
+
+    i
+      font-size: 30px
+      color: inherit
+
+  &__text
+    font-family: Comfortaa
+    color: darken($accent-color, 40%)
+    cursor: pointer
+
+  &__palette
+    display: flex
+
+  &__common-colors
+    list-style-type: none
+    max-height: 70%
+    margin: 0
+    padding: 0
+    background: darken($accent-color, 2%)
+    background: linear-gradient(to bottom, darken($accent-color, 2%), transparent)
+
+  &__common-color
+    width: 30px
+    height: 30px
+    box-shadow: 0px 0px 10px darken($accent-color, 30%)
+
+
+  &__palette-transition
+    display: flex
+  .palette-transition-enter
+    opacity: 0.01
+    transform: translateX(-100px)
+
+  .palette-transition-enter.palette-transition-enter-active
+    opacity: 1
+    transition: all 300ms ease-in
+    transform: translateX(0px)
+
+  .palette-transition-leave
+    opacity: 1
+    transform: translateX(0px)
+
+  .palette-transition-leave.palette-transition-leave-active
+    opacity: 0.01
+    transition: all 300ms ease-in
+    transform: translateX(-100px)
