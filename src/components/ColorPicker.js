@@ -6,8 +6,6 @@ import Radium from 'radium'
 import '../assets/sass/color-picker.sass'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
-const COLORS = ['#9FE29F', '#A1E2E3', '#E4A4BA']
-
 class ColorPicker extends React.Component {
 
   constructor(props) {
@@ -56,7 +54,7 @@ class ColorPicker extends React.Component {
       <div className="color-picker__palette">
         <ColorPickerLine value={color} onDrag={this.onDrag.bind(this)} className="color-picker__palette-line" />
         <ul className="color-picker__common-colors" style={styles.commonColors}>
-          {COLORS.map((clr, i) => {
+          {this.props.defaultcolors.map((clr, i) => {
             return <li key={i} onClick={this.changeColor.bind(this, clr)} className="color-picker__common-color" style={{background: clr, boxShadow: `0px 0px 10px ${tinycolor(color).darken(30).toString()}`}}></li>
           })}
         </ul>

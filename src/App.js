@@ -6,8 +6,8 @@ import ColorPicker from './components/ColorPicker'
 
 import './assets/sass/main.sass'
 
-import AVATAR from './assets/img/avatar.jpg'
 
+import AVATAR from './assets/img/avatar.jpg'
 
 const SOCIALS = [
   {href: 'https://twitter.com/idreamzzer', className: 'twitter'},
@@ -16,7 +16,7 @@ const SOCIALS = [
   {href: 'mailto:idreamzzer@gmail.com', className: 'envelope-o'}
 ]
 
-
+const COLORS = ['#9FE29F', '#A1E2E3', '#E4A4BA']
 
 
 class App extends Component {
@@ -25,12 +25,12 @@ class App extends Component {
     super(props)
 
     this.state = {
-      color: ''
+      color: COLORS[1]
     }
   }
 
   componentDidMount() {
-    if (!this.state.color && localStorage.getItem('color')) {
+    if (localStorage.getItem('color')) {
       this.setState({color: localStorage.getItem('color')})
     }
   }
@@ -54,7 +54,7 @@ class App extends Component {
 
         <div className="main" style={styles.main} >
 
-          <ColorPicker color={color} onChangeColor={this.onChangeColor.bind(this)} />
+          <ColorPicker defaultcolors={COLORS} color={color} onChangeColor={this.onChangeColor.bind(this)} />
 
           <Card color={color} avatar={AVATAR} socials={SOCIALS} />
         </div>
