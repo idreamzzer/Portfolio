@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import tinycolor from 'tinycolor2'
 
-import Card from './components/Card'
+import Particles from 'react-particles-js'
+import particlesConfig from './assets/particlesjs-config.json'
+
 import ColorPicker from './components/ColorPicker'
 
 import './assets/sass/main.sass'
@@ -33,6 +35,8 @@ class App extends Component {
     if (localStorage.getItem('color')) {
       this.setState({color: localStorage.getItem('color')})
     }
+
+
   }
 
   onChangeColor(color) {
@@ -49,14 +53,29 @@ class App extends Component {
       }
     }
 
+    let children = React.Children.map(this.props.children, function (child) {
+      return React.cloneElement(child, {
+        color: color,
+        avatar: AVATAR,
+        socials: SOCIALS
+      })
+    })
+
     return (
       <div className="App">
 
         <div className="main" style={styles.main} >
 
+          <div id="particles-js">
+            <Particles params={particlesConfig} />
+          </div>
+
           <ColorPicker defaultcolors={COLORS} color={color} onChangeColor={this.onChangeColor.bind(this)} />
 
-          <Card color={color} avatar={AVATAR} socials={SOCIALS} />
+          <div className="content">
+            {children}
+          </div>
+
         </div>
 
       </div>

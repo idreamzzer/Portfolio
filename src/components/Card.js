@@ -3,7 +3,7 @@ import tinycolor from 'tinycolor2'
 import Radium from 'radium'
 
 import Profile from './Profile'
-import About from './About'
+import CardNav from './CardNav'
 
 import '../assets/sass/card.sass'
 
@@ -29,7 +29,7 @@ class Card extends React.Component {
       </div>
 
       <div className="card__side card__side--right">
-        <About color={this.props.color} />
+        <CardNav color={this.props.color} />
       </div>
 
     </div>)

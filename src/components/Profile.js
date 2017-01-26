@@ -12,7 +12,7 @@ class Profile extends React.Component {
 
     let styles = {
       profile: {
-        color: tinycolor(color).darken(60).toString()
+        color: tinycolor(color).lighten(40).toString()
       },
       avatar: {
         background: `url(${this.props.avatar})`,
@@ -21,7 +21,7 @@ class Profile extends React.Component {
         boxShadow: `0px 0px 10px ${tinycolor(color).lighten(10).toString()}`
       },
       link: {
-        color: tinycolor(color).darken(40).toString()
+        color: tinycolor(color).lighten(15).toString()
       }
     }
 

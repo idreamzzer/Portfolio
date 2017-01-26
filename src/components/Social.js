@@ -15,14 +15,14 @@ class Social extends React.Component {
         boxShadow: `0px 0px 10px ${tinycolor(color).darken(10).toString()}`
       },
       link: {
-        color: tinycolor(color).darken(30).toString(),
+        color: tinycolor(color).lighten(15).toString(),
         background: tinycolor(color).darken(15).toString(),
         ':hover': {
-          color: tinycolor(color).darken(40).toString(),
+          color: tinycolor(color).lighten(10).toString(),
           background: tinycolor(color).darken(12).toString()
         },
         ':active': {
-          color: tinycolor(color).darken(50).toString(),
+          color: tinycolor(color).lighten(5).toString(),
           background: tinycolor(color).darken(18).toString()
         }
       }
