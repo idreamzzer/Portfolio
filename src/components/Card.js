@@ -23,7 +23,10 @@ class Card extends React.Component {
 
   handleOverlay(status, text) {
     this.setState({isOverlayActive: status, textOverlay: text})
-    setTimeout(this.props.hideCard, 1200)
+    setTimeout(() => {
+      this.refs.cardLeft.style.display = 'none'
+      this.refs.cardRight.style.display = 'none'
+    }, 500)
   }
 
   render() {
@@ -47,15 +50,17 @@ class Card extends React.Component {
       <CSSTransition
         transitionName="transition"
         transitionEnterTimeout={500}
-        transitionLeaveTimeout={500}>
+        transitionLeaveTimeout={500}
+        transitionAppear={true}
+        transitionAppearTimeout={700}>
         {renderOverlay}
       </CSSTransition>
 
-      <div className="card__side card__side--left" style={styles.sideLeft}>
+      <div ref="cardLeft" className="card__side card__side--left" style={styles.sideLeft}>
         <Profile color={this.props.color} avatar={this.props.avatar} socials={this.props.socials} />
       </div>
 
-      <div className="card__side card__side--right">
+      <div ref="cardRight" className="card__side card__side--right">
         <CardNav color={this.props.color} handleOverlay={this.handleOverlay.bind(this)} />
       </div>
 
