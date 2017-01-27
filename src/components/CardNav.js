@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router'
+import { browserHistory } from 'react-router'
 import tinycolor from 'tinycolor2'
 import Radium from 'radium'
 
@@ -21,11 +21,22 @@ class CardNav extends React.Component {
     }
   }
 
+  onClick(link, e) {
+    e.preventDefault()
+    this.props.handleOverlay(true, e.target.textContent)
+
+    setTimeout(() => browserHistory.push(link), 200)
+  }
+
   render() {
 
     let color = this.props.color
 
+
+
     let styles = {
+      link: {
+      },
       linkText: {
         color: tinycolor(color).darken(30).toString(),
         ':hover': {
@@ -37,11 +48,12 @@ class CardNav extends React.Component {
       }
     }
 
+
     let renderItems = NAVITEMS.map((item, i) => {
-      return <Link to={item.link} key={i} className="card-nav__link" style={styles.link} >
+      return <a key={i} href={item.link} ref="link" className="card-nav__link" style={styles.link} onClick={this.onClick.bind(this, item.link)} >
         <div className="card-nav__link-effect"><span className="card-nav__link-effect--top" style={styles.linkEffect}></span><span className="card-nav__link-effect--bottom" style={styles.linkEffect}></span></div>
         <span key={i} className="card-nav__link-text" style={styles.linkText}>{item.text}</span>
-      </Link>
+      </a>
     })
 
     return (

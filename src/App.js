@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import tinycolor from 'tinycolor2'
+import CSSTransition from 'react-addons-css-transition-group'
 
 import Particles from 'react-particles-js'
 import particlesConfig from './assets/particlesjs-config.json'
 
 import ColorPicker from './components/ColorPicker'
+import Card from './components/Card'
 
 import './assets/sass/main.sass'
 
@@ -27,7 +29,9 @@ class App extends Component {
     super(props)
 
     this.state = {
-      color: COLORS[1]
+      color: COLORS[1],
+      isCardActive: true,
+      isContentActive: false
     }
   }
 
@@ -35,8 +39,10 @@ class App extends Component {
     if (localStorage.getItem('color')) {
       this.setState({color: localStorage.getItem('color')})
     }
+  }
 
-
+  unmountCardandMountContent() {
+    this.setState({isCardActive: false, isContentActive: true})
   }
 
   onChangeColor(color) {
@@ -61,6 +67,14 @@ class App extends Component {
       })
     })
 
+    let renderCard = (this.state.isCardActive) ? <Card color={color} avatar={AVATAR} socials={SOCIALS} hideCard={this.unmountCardandMountContent.bind(this)} /> : null
+
+    let renderContent = (this.state.isContentActive) ?
+    <div className="content">
+      {children}
+    </div>
+    : null
+
     return (
       <div className="App">
 
@@ -72,10 +86,23 @@ class App extends Component {
 
           <ColorPicker defaultcolors={COLORS} color={color} onChangeColor={this.onChangeColor.bind(this)} />
 
-          <div className="content">
-            {children}
-          </div>
+          <CSSTransition
+            transitionName="transition"
+            transitionEnterTimeout={600}
+            transitionLeaveTimeout={600}
+            transitionAppear={true}
+            transitionAppearTimeout={800}>
+            {renderCard}
+          </CSSTransition>
 
+          <CSSTransition
+            transitionName="transition"
+            transitionEnterTimeout={600}
+            transitionLeaveTimeout={600}
+            transitionAppear={true}
+            transitionAppearTimeout={800}>
+            {renderContent}
+          </CSSTransition>
         </div>
 
       </div>
