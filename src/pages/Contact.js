@@ -1,10 +1,12 @@
 import React from 'react';
 
+import '../assets/sass/contact.sass'
+
 class Contact extends React.Component {
 
   render() {
     return (
-      <div>Contact</div>
+      <div className="contact content__page">Contact</div>
     );
   }
 

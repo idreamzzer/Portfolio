@@ -47,21 +47,25 @@ class Card extends React.Component {
     let renderOverlay = (this.state.isOverlayActive) ? <div className="card__overlay" style={styles.overlay}>{this.state.textOverlay}</div> : null
 
     return (<div className="card" ref="card" style={styles.card}>
-      <CSSTransition
-        transitionName="transition"
-        transitionEnterTimeout={500}
-        transitionLeaveTimeout={500}
-        transitionAppear={true}
-        transitionAppearTimeout={700}>
-        {renderOverlay}
-      </CSSTransition>
+      <div className="card__wrapper">
 
-      <div ref="cardLeft" className="card__side card__side--left" style={styles.sideLeft}>
-        <Profile color={this.props.color} avatar={this.props.avatar} socials={this.props.socials} />
-      </div>
+        <CSSTransition
+          transitionName="transition"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
+          transitionAppear={true}
+          transitionAppearTimeout={700}>
+          {renderOverlay}
+        </CSSTransition>
 
-      <div ref="cardRight" className="card__side card__side--right">
-        <CardNav color={this.props.color} handleOverlay={this.handleOverlay.bind(this)} />
+        <div ref="cardLeft" className="card__side card__side--left" style={styles.sideLeft}>
+          <Profile color={this.props.color} avatar={this.props.avatar} socials={this.props.socials} />
+        </div>
+
+        <div ref="cardRight" className="card__side card__side--right">
+          <CardNav color={this.props.color} handleOverlay={this.handleOverlay.bind(this)} />
+        </div>
+        
       </div>
 
     </div>)

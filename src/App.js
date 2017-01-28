@@ -6,9 +6,9 @@ import Particles from 'react-particles-js'
 import particlesConfig from './assets/particlesjs-config.json'
 
 import ColorPicker from './components/ColorPicker'
+import Navigation from './components/Navigation'
 
 import './assets/sass/main.sass'
-
 
 import AVATAR from './assets/img/avatar.jpg'
 
@@ -56,7 +56,8 @@ class App extends Component {
       return React.cloneElement(child, {
         color: color,
         avatar: AVATAR,
-        socials: SOCIALS
+        socials: SOCIALS,
+        key: location.pathname
       })
     })
 
@@ -72,16 +73,21 @@ class App extends Component {
 
           <ColorPicker defaultcolors={COLORS} color={color} onChangeColor={this.onChangeColor.bind(this)} />
 
-          <CSSTransition
-            component="div"
-            className="content"
-            transitionName="transition"
-            transitionEnterTimeout={600}
-            transitionLeaveTimeout={600}
-            transitionAppear={true}
-            transitionAppearTimeout={1000}>
+          <Navigation />
+
+          <div className="content" >
+            <CSSTransition
+              component="div"
+              className="content__wrapper"
+              transitionName="transition"
+              transitionEnterTimeout={600}
+              transitionLeaveTimeout={600}
+              transitionAppear={true}
+              transitionAppearTimeout={1000}>
               {children}
-          </CSSTransition>
+            </CSSTransition>
+
+          </div>
         </div>
 
       </div>

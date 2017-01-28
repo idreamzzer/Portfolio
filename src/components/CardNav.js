@@ -26,7 +26,7 @@ class CardNav extends React.Component {
     e.preventDefault()
     this.props.handleOverlay(true, e.target.textContent)
 
-    setTimeout(() => browserHistory.push(link), 2000)
+    setTimeout(() => browserHistory.push(link), 1200)
   }
 
   render() {

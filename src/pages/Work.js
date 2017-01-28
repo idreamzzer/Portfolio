@@ -1,10 +1,12 @@
 import React from 'react';
 
+import '../assets/sass/work.sass'
+
 class Work extends React.Component {
 
   render() {
     return (
-      <div>Wrok</div>
+      <div className="work content__page">Work</div>
     );
   }
 
