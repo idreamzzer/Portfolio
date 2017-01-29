@@ -34,7 +34,7 @@ class Card extends React.Component {
 
     let styles = {
       card: {
-        boxShadow: `0px 0px 200px ${tinycolor(color).darken(25).toString()}`
+        boxShadow: `0px 0px 100px ${tinycolor(color).lighten(15).toString()}`
       },
       sideLeft: {
         background: tinycolor(color).darken(3).toString()
@@ -65,7 +65,7 @@ class Card extends React.Component {
         <div ref="cardRight" className="card__side card__side--right">
           <CardNav color={this.props.color} handleOverlay={this.handleOverlay.bind(this)} />
         </div>
-        
+
       </div>
 
     </div>)

@@ -12,12 +12,21 @@
   color: darken($accent-color, 60%)
   font-family: "Comfortaa"
 
-  &__avatar
-    width: 150px
-    height: 150px
+  &__side
+    display: flex
+    flex-direction: column
+    align-items: center
+    height: 50%
+    width: 100%
 
-    margin-top: 20px
-    margin-bottom: 10px
+  &__avatar
+    width: 6em
+    height: 6em
+    min-height: 110px
+    min-width: 110px
+
+    margin-top: 1em
+    margin-bottom: 0.5em
 
     background: darken($accent-color, 40%)
     border: 2px solid #fff
@@ -26,13 +35,12 @@
 
   &__nickname
     font-weight: bold
-    font-size: 22px
+    font-size: 1.1em
 
   &__twittername
-    margin-bottom: 15px
 
   &__link
-    font-size: 14px
+    font-size: 0.7em
     font-style: italic
     color: darken($accent-color, 40%)
     text-decoration: none
@@ -43,13 +51,13 @@
       color: darken($accent-color, 50%)
 
   &__fullname
-    font-size: 26px
-    margin: 0 0 5px
+    font-size: 1.3em
+    margin: 1em 0 0.5em
 
   &__bio
-    font-size: 18px
+    font-size: 0.9em
     flex-grow: 1
 
   &__social
     width: 100%
-    margin-bottom: 20px
+    margin-bottom: 1em

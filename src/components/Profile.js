@@ -27,13 +27,17 @@ class Profile extends React.Component {
 
     return (
       <div className="profile" style={styles.profile}>
-        <div className="profile__avatar" style={styles.avatar}></div>
-        <span className="profile__nickname">DreamZz</span>
-        <span className="profile__twittername"><a style={styles.link} href="https://twitter.com/idreamzzer" className="profile__link" target="_blank">@idreamzzer</a></span>
-        <h2 className="profile__fullname">Усков Алексей</h2>
-        <p className="profile__bio">Web-разработчик</p>
-        <div className="profile__social">
-          <Social socials={this.props.socials} color={this.props.color} />
+        <div className="profile__side">
+          <div className="profile__avatar" style={styles.avatar}></div>
+          <span className="profile__nickname">DreamZz</span>
+          <span className="profile__twittername"><a style={styles.link} href="https://twitter.com/idreamzzer" className="profile__link" target="_blank">@idreamzzer</a></span>
+        </div>
+        <div className="profile__side">
+          <h2 className="profile__fullname">Усков Алексей</h2>
+          <p className="profile__bio">Web-разработчик</p>
+          <div className="profile__social">
+            <Social socials={this.props.socials} color={this.props.color} />
+          </div>
         </div>
       </div>
     );

@@ -49,7 +49,7 @@ class App extends Component {
 
     let styles = {
       particles: {
-        background: `linear-gradient(to top right, ${color}, ${tinycolor(color).lighten(20).toString()})`
+        background: `linear-gradient(to top right, ${tinycolor(color).darken(10).toString()}, ${tinycolor(color).lighten(10).toString()})`
       }
     }
 
@@ -77,20 +77,18 @@ class App extends Component {
 
           {renderNavigation}
 
-          <div className="content" >
-            <CSSTransition
-              component="div"
-              className="content__wrapper"
-              transitionName="transition"
-              transitionEnterTimeout={600}
-              transitionLeaveTimeout={600}
-              transitionAppear={true}
-              transitionAppearTimeout={1000}>
-              
-              {children}
-            </CSSTransition>
+          <CSSTransition
+            component="div"
+            className="content"
+            transitionName="transition"
+            transitionEnterTimeout={600}
+            transitionLeaveTimeout={600}
+            transitionAppear={true}
+            transitionAppearTimeout={1000}>
 
-          </div>
+            {children}
+          </CSSTransition>
+
         </div>
 
       </div>
