@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import tinycolor from 'tinycolor2'
 import CSSTransition from 'react-addons-css-transition-group'
 
+import detectMobile from './helpers/detectMobile'
+
 import Particles from 'react-particles-js'
 import particlesConfig from './assets/particlesjs-config.json'
 
@@ -29,14 +31,24 @@ class App extends Component {
     super(props)
 
     this.state = {
-      color: COLORS[1]
+      color: COLORS[1],
+      isMobile: false
+    }
+  }
+
+  componentWillMount() {
+    let isMobile = detectMobile()
+    if (isMobile) {
+      this.setState({isMobile: true})
     }
   }
 
   componentDidMount() {
+
     if (localStorage.getItem('color')) {
       this.setState({color: localStorage.getItem('color')})
     }
+
   }
 
   onChangeColor(color) {
@@ -62,6 +74,8 @@ class App extends Component {
       })
     })
 
+    let renderParticles = (!this.state.isMobile) ? <Particles params={particlesConfig} /> : null
+
     let renderNavigation = (location.pathname !== '/') ? <Navigation /> : null
 
     return (
@@ -70,9 +84,8 @@ class App extends Component {
         <div className="main">
 
           <div id="particles-js" style={styles.particles}>
-            <Particles params={particlesConfig} />
+            {renderParticles}
           </div>
-
           <ColorPicker defaultcolors={COLORS} color={color} onChangeColor={this.onChangeColor.bind(this)} />
 
           {renderNavigation}
