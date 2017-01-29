@@ -9,6 +9,7 @@ import ColorPicker from './components/ColorPicker'
 import Navigation from './components/Navigation'
 
 import './assets/sass/main.sass'
+import 'bootstrap-grid/dist/grid.min.css'
 
 import AVATAR from './assets/img/avatar.jpg'
 
@@ -47,7 +48,7 @@ class App extends Component {
     let color = this.state.color
 
     let styles = {
-      main: {
+      particles: {
         background: `linear-gradient(to top right, ${color}, ${tinycolor(color).lighten(20).toString()})`
       }
     }
@@ -61,19 +62,20 @@ class App extends Component {
       })
     })
 
+    let renderNavigation = (location.pathname !== '/') ? <Navigation /> : null
 
     return (
       <div className="App">
 
-        <div className="main" style={styles.main} >
+        <div className="main">
 
-          <div id="particles-js">
+          <div id="particles-js" style={styles.particles}>
             <Particles params={particlesConfig} />
           </div>
 
           <ColorPicker defaultcolors={COLORS} color={color} onChangeColor={this.onChangeColor.bind(this)} />
 
-          <Navigation />
+          {renderNavigation}
 
           <div className="content" >
             <CSSTransition
@@ -84,6 +86,7 @@ class App extends Component {
               transitionLeaveTimeout={600}
               transitionAppear={true}
               transitionAppearTimeout={1000}>
+              
               {children}
             </CSSTransition>
 

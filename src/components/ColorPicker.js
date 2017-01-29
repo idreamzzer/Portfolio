@@ -62,21 +62,28 @@ class ColorPicker extends React.Component {
       : null
 
     return (
-      <div className="color-picker">
-        <div className="color-picker__handler" onClick={this.togglePalette.bind(this)}>
-          <button className="color-picker__button"><i className="fa fa-paint-brush" style={styles.icon} aria-hidden="true"></i></button>
-          <span className="color-picker__text" style={styles.text}>Выбери свой цвет</span>
-        </div>
+      <ReactCSSTransitionGroup
+        component="div"
+        className="color-picker"
+        transitionName="transition"
+        transitionEnterTimeout={600}
+        transitionLeaveTimeout={600}
+        transitionAppear={true}
+        transitionAppearTimeout={1000}>
+          <div className="color-picker__handler" onClick={this.togglePalette.bind(this)}>
+            <button className="color-picker__button"><i className="fa fa-paint-brush" style={styles.icon} aria-hidden="true"></i></button>
+          </div>
 
-        <ReactCSSTransitionGroup
-          component="div"
-          className="color-picker__palette-transition"
-          transitionName="palette-transition"
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}>
-          {colorPalette}
-        </ReactCSSTransitionGroup>
-      </div>
+          <ReactCSSTransitionGroup
+            component="div"
+            className="color-picker__palette-transition"
+            transitionName="palette-transition"
+            transitionEnterTimeout={300}
+            transitionLeaveTimeout={300}>
+            {colorPalette}
+          </ReactCSSTransitionGroup>
+      </ReactCSSTransitionGroup>
+
     );
   }
 

@@ -6,7 +6,7 @@ class Work extends React.Component {
 
   render() {
     return (
-      <div className="work content__page">Work</div>
+      <div className="work content__page container">Work</div>
     );
   }
 
