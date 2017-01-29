@@ -57,6 +57,7 @@ class App extends Component {
   }
 
   render() {
+    let isMobile = this.state.isMobile
     let color = this.state.color
 
     let styles = {
@@ -70,6 +71,7 @@ class App extends Component {
         color: color,
         avatar: AVATAR,
         socials: SOCIALS,
+        isMobile: isMobile,
         key: location.pathname
       })
     })
