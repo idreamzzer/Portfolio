@@ -77,10 +77,18 @@
   display: none
 
 .color-picker
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flex
+  display: -moz-flex
   display: flex
   flex-direction: column
 
   &__handler
+    display: -webkit-box
+    display: -webkit-flex
+    display: -ms-flex
+    display: -moz-flex
     display: flex
     align-items: center
     margin-bottom: 10px
@@ -108,6 +116,10 @@
       transition: color .3s
 
   &__palette
+    display: -webkit-box
+    display: -webkit-flex
+    display: -ms-flex
+    display: -moz-flex
     display: flex
 
   &__common-colors
@@ -125,21 +137,33 @@
 
 
   &__palette-transition
+    display: -webkit-box
+    display: -webkit-flex
+    display: -ms-flex
+    display: -moz-flex
     display: flex
   .palette-transition-enter
     opacity: 0.01
+    -webkit-transform: translateX(-100px)
+    -ms-transform: translateX(-100px)
     transform: translateX(-100px)
 
   .palette-transition-enter.palette-transition-enter-active
     opacity: 1
     transition: all 300ms ease-in
+    -webkit-transform: translateX(0px)
+    -ms-transform: translateX(0px)
     transform: translateX(0px)
 
   .palette-transition-leave
     opacity: 1
+    -webkit-transform: translateX(0px)
+    -ms-transform: translateX(0px)
     transform: translateX(0px)
 
   .palette-transition-leave.palette-transition-leave-active
     opacity: 0.01
     transition: all 300ms ease-in
+    -webkit-transform: translateX(-100px)
+    -ms-transform: translateX(-100px)
     transform: translateX(-100px)
