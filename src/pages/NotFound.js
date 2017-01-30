@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router'
 
-class Unknown extends React.Component {
+class NotFound extends React.Component {
 
   render() {
     return (
@@ -23,4 +23,4 @@ class Unknown extends React.Component {
 
 }
 
-export default Unknown;
+export default NotFound;

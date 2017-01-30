@@ -11,7 +11,7 @@ import ColorPicker from './components/ColorPicker'
 import Navigation from './components/Navigation'
 
 import './assets/sass/main.sass'
-import 'bootstrap-grid/dist/grid.min.css'
+import 'bootstrap-grid-only/bootstrap.css'
 
 import AVATAR from './assets/img/avatar.jpg'
 
