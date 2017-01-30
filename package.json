@@ -2,6 +2,9 @@
   "name": "myweb",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "7.4.0"
+  },
   "devDependencies": {
     "autoprefixer": "6.5.1",
     "babel-core": "6.17.0",
@@ -62,9 +65,11 @@
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.4.2",
     "react-addons-transition-group": "^15.4.2",
+    "react-color-picker": "^4.0.2",
     "react-dom": "^15.4.2",
     "react-particles-js": "^1.4.0",
-    "react-router-page-transition": "^2.1.2"
+    "react-router-page-transition": "^2.1.2",
+    "tinycolor2": "^1.4.1"
   },
   "scripts": {
     "start": "node scripts/start.js",
