@@ -16,6 +16,8 @@ class ColorPicker extends React.Component {
     }
   }
 
+  
+
   togglePalette(e) {
     let showPalette = (this.state.showPalette) ? false : true
     this.setState({showPalette})

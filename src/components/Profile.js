@@ -7,6 +7,8 @@ import '../assets/sass/profile.sass'
 
 class Profile extends React.Component {
 
+  
+
   render() {
     let color = this.props.color
 
