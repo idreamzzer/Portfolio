@@ -7,6 +7,7 @@ import About from './pages/About';
 import Card from './components/Card';
 import Work from './pages/Work';
 import Contact from './pages/Contact';
+import Unknown from './pages/Unknown';
 
 ReactDOM.render(
   <Router history={browserHistory}>
@@ -15,6 +16,7 @@ ReactDOM.render(
       <Route path="about" component={About} />
       <Route path="work" component={Work} />
       <Route path="contact" component={Contact} />
+      <Route path="*" component={Unknown} />
     </Route>
   </Router>,
   document.getElementById('root')

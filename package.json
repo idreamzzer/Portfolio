@@ -56,6 +56,8 @@
   },
   "dependencies": {
     "bootstrap-grid": "^2.0.1",
+    "express": "^4.14.1",
+    "morgan": "^1.7.0",
     "particles.js": "^2.0.0",
     "react": "^15.4.2",
     "react-addons-css-transition-group": "^15.4.2",
