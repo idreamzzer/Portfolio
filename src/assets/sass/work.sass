@@ -8,6 +8,7 @@
   justify-content: center
 
   &__wrapper
+    width: 100%
 
   &__list
     margin: 0
@@ -24,29 +25,21 @@
   padding: 10px
 
 .item
-  width: 260px
-  height: 220px
+  width: 360px
+  height: 260px
   display: flex
   justify-content: space-between
   overflow: hidden
   position: relative
   transition: all .3s ease-in
   cursor: pointer
+  font-size: 20px
 
-  &:hover
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, .2)
-    z-index: 5
-
-    .item__overlay
-      width: 200%
-      height: 200%
-      transform: rotate(0deg) translate(25%,-25%)
-      border-radius: 100%
-      background: rgba($accent-color, 0.5)
-      opacity: .6
-
-    .item__description
-      opacity: 1
+  &__link
+    width: 100%
+    height: 100%
+    display: flex
+    text-decoration: none
 
   &__overlay
     width: 50px
@@ -59,21 +52,25 @@
     opacity: 1
     transition: all .5s ease-in
     border-radius: 0
+    &--active
+      width: 200%
+      height: 200%
+      transform: rotate(0deg) translate(25%,-25%)
+      border-radius: 100%
+      background: rgba($accent-color, 0.5)
+      opacity: .6
 
   &:nth-child(2n) .item__overlay
     top: 100%
   &:nth-child(3n) .item__overlay
     top: 0%
-  &:nth-child(2n):hover .item__overlay
-    top: 0%
-    transform: rotate(0deg) translate(25%, -25%)
-  &:nth-child(3n):hover .item__overlay
-    top: 100%
-    transform: rotate(0deg) translate(25%, -75%)
+
 
   &__img
     width: 100%
+    height: 100%
     border-radius: 10px
+    background-size: cover
 
   &__description
     height: 100%
@@ -91,9 +88,11 @@
     color: #fff
 
   &__title
+    margin: 1em 0 .1em
 
   &__text
     flex-grow: 1
+    font-size: 0.75em
 
   &__btn
     align-self: flex-end
@@ -106,31 +105,60 @@
     background: transparent
     cursor: pointer
 
+@media (min-width: 768px)
+  .item
+    &:nth-child(2n):hover .item__overlay
+      top: 0%
+      transform: rotate(0deg) translate(25%, -25%)
+    &:nth-child(3n):hover .item__overlay
+      top: 100%
+      transform: rotate(0deg) translate(25%, -75%)
+    &:hover
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, .2)
+      z-index: 5
+
+      .item__overlay
+        width: 200%
+        height: 200%
+        transform: rotate(0deg) translate(25%,-25%)
+        border-radius: 100%
+        background: rgba($accent-color, 0.5)
+        opacity: .6
+
+      .item__description
+        opacity: 1
+
 @media (max-width: 1200px)
   .item
     width: 290px
     height: 220px
+    font-size: 18px
 
 @media (max-width: 992px)
   .item
     width: 340px
     height: 240px
 
+
 @media (max-width: 768px)
   .item
     width: 100%
     height: 300px
     margin-right: 0
+    font-size: 20px
     &__img
       width: 50%
+    &__description
+      width: 50%
+      position: relative
+      opacity: 1
 
 @media (max-width: 600px)
   .item
     height: 200px
+    font-size: 16px
 
-@media (max-width: 450px)
+@media (max-width: 400px)
   .item
-    height: auto
-    flex-direction: column
     &__img
-      width: 100%
+      display: none

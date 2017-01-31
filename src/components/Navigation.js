@@ -18,9 +18,9 @@ class Navigation extends React.Component {
         transitionAppear={true}
         transitionAppearTimeout={1000}>
           <Link to="/" className="navigation__link" activeClassName="navigation__link--active">Home</Link>
-          <Link to="about" className="navigation__link" activeClassName="navigation__link--active">About</Link>
-          <Link to="work" className="navigation__link" activeClassName="navigation__link--active">Work</Link>
-          <Link to="contact" className="navigation__link" activeClassName="navigation__link--active">Contact</Link>
+          <Link to="/about" className="navigation__link" activeClassName="navigation__link--active">About</Link>
+          <Link to="/work" className="navigation__link" activeClassName="navigation__link--active">Work</Link>
+          <Link to="/contact" className="navigation__link" activeClassName="navigation__link--active">Contact</Link>
       </CSSTransition>
 
     );
