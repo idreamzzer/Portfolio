@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 var helper = require('sendgrid').mail;
 
-var sg = require('sendgrid')('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');
+var sg = require('sendgrid')(process.env.MAIL_API_KEY);
 
 
 

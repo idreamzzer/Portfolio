@@ -12,7 +12,7 @@ class Projects extends React.Component {
     let color = this.props.color
 
     return (
-      <section className="projects">
+      <section className="projects container">
         <div className="projects__filter"></div>
         <div className="projects__wrapper">
 
