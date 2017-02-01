@@ -16,7 +16,7 @@ class ColorPicker extends React.Component {
     }
   }
 
-  
+
 
   togglePalette(e) {
     let showPalette = (this.state.showPalette) ? false : true
@@ -29,6 +29,10 @@ class ColorPicker extends React.Component {
 
   changeColor(color) {
     this.props.onChangeColor(color)
+  }
+
+  handlerParticles(e) {
+    this.props.handlerParticles(e.target.checked)
   }
 
   render() {
@@ -54,12 +58,19 @@ class ColorPicker extends React.Component {
 
     let colorPalette = (this.state.showPalette) ?
       <div className="color-picker__palette">
-        <ColorPickerLine value={color} onDrag={this.onDrag.bind(this)} className="color-picker__palette-line" />
-        <ul className="color-picker__common-colors" style={styles.commonColors}>
-          {this.props.defaultcolors.map((clr, i) => {
-            return <li key={i} onClick={this.changeColor.bind(this, clr)} className="color-picker__common-color" style={{background: clr, boxShadow: `0px 0px 10px ${tinycolor(color).darken(30).toString()}`}}></li>
-          })}
-        </ul>
+        <div className="color-picker__palette-group box">
+          <ColorPickerLine value={color} onDrag={this.onDrag.bind(this)} className="color-picker__palette-line" />
+          <ul className="color-picker__common-colors" style={styles.commonColors}>
+            {this.props.defaultcolors.map((clr, i) => {
+              return <li key={i} onClick={this.changeColor.bind(this, clr)} className="color-picker__common-color" style={{background: clr, boxShadow: `0px 0px 10px ${tinycolor(color).darken(30).toString()}`}}></li>
+            })}
+          </ul>
+        </div>
+
+        <div className="color-picker__handler-particles-group box">
+          <input type="checkbox" id="handlerParticles" className="color-picker__handler-particles" onChange={this.handlerParticles.bind(this)} checked={this.props.isParticlesEnabled} />
+          <label htmlFor="handlerParticles" className="color-picker__handler-particles-label">Анимация частиц {this.props.isParticlesEnabled ? 'включена' : 'выключена'}</label>
+        </div>
       </div>
       : null
 

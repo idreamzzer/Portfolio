@@ -15,13 +15,6 @@ import 'bootstrap-grid-only/bootstrap.css'
 
 import AVATAR from './assets/img/avatar.jpg'
 
-const SOCIALS = [
-  {href: 'https://twitter.com/idreamzzer', className: 'twitter'},
-  {href: 'https://vk.com/dreamzzer', className: 'vk'},
-  {href: 'https://github.com/idreamzzer', className: 'github'},
-  {href: 'mailto:idreamzzer@gmail.com', className: 'envelope-o'}
-]
-
 const COLORS = ['#9FE29F', '#A1E2E3', '#E4A4BA']
 
 
@@ -32,7 +25,8 @@ class App extends Component {
 
     this.state = {
       color: COLORS[1],
-      isMobile: false
+      isMobile: false,
+      isParticlesEnabled: true
     }
   }
 
@@ -62,6 +56,12 @@ class App extends Component {
     }
   }
 
+  handlerParticles() {
+    (this.state.isParticlesEnabled)
+    ? this.setState({isParticlesEnabled: false})
+    : this.setState({isParticlesEnabled: true})
+  }
+
   onChangeColor(color) {
     this.setState({color})
     localStorage.setItem('color', color)
@@ -81,13 +81,22 @@ class App extends Component {
       return React.cloneElement(child, {
         color: color,
         avatar: AVATAR,
-        socials: SOCIALS,
         isMobile: isMobile,
         key: location.pathname
       })
     })
 
-    let renderParticles = (!this.state.isMobile) ? <Particles params={particlesConfig} /> : null
+    let renderParticles = () => {
+      if (!this.state.isMobile) {
+
+        if (this.state.isParticlesEnabled) {
+          return <Particles params={particlesConfig} />
+        }
+        return null
+
+      }
+      return null
+    }
 
     let renderNavigation = (location.pathname !== '/') ? <Navigation /> : null
 
@@ -106,11 +115,11 @@ class App extends Component {
             transitionAppear={true}
             transitionAppearTimeout={700}>
             <div id="particles-js" style={styles.particles}>
-              {renderParticles}
+              {renderParticles()}
             </div>
           </CSSTransition>
 
-          <ColorPicker defaultcolors={COLORS} color={color} onChangeColor={this.onChangeColor.bind(this)} />
+          <ColorPicker defaultcolors={COLORS} color={color} onChangeColor={this.onChangeColor.bind(this)} handlerParticles={this.handlerParticles.bind(this)} isParticlesEnabled={this.state.isParticlesEnabled} />
 
           {renderNavigation}
 

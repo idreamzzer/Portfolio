@@ -13,7 +13,7 @@ const PROJECTS = [
     imageSmall: imgSmall1,
     imageBig: imgSmall1,
     title: 'Lorem ipsum',
-    text: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum '
+    text: 'Какое-то описание проекта, его цель, инструменты и т.д.'
   },
   {
     id: '2',

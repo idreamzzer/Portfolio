@@ -98,7 +98,7 @@ class Item extends React.Component {
       <li className="projects__item item box">
         <Link to={`/work/project/${this.props.id}`} className="item__link">
           <div className="item__overlay" style={styles.overlay}></div>
-          <div className="item__img" style={styles.img}></div>
+          <div className="item__img" style={styles.img}><div className="item__img-overlay"></div></div>
           <div className="item__description" style={styles.dscr}>
             <h3 className="item__title">{this.props.title}</h3>
             <p className="item__text">{this.props.text}</p>

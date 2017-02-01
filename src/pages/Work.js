@@ -11,10 +11,8 @@ class Work extends React.Component {
     let color = this.props.color
 
     return (
-      <div className="work content__page">
-        <div className="container">
+      <div className="work content__page container">
           <Projects color={color} />
-        </div>
       </div>
     );
   }
