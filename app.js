@@ -22,6 +22,8 @@ app.use(express.static(path.resolve(__dirname, 'build')));
 
 app.post('/sendmail', (req, res) => {
 
+
+
   from_email = new helper.Email("noreply@dreamzz.ru");
   to_email = new helper.Email("idreamzzer@gmail.com");
   subject = "Got message from dreamzz.ru";
