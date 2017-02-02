@@ -16,7 +16,7 @@ import 'bootstrap-grid-only/bootstrap.css'
 
 import AVATAR from './assets/img/avatar.jpg'
 
-const COLORS = ['#9FE29F', '#A1E2E3', '#E4A4BA']
+const COLORS = ['#4978D2', '#9FE29F', '#A1E2E3', '#E4A4BA']
 
 
 class App extends Component {
@@ -25,7 +25,7 @@ class App extends Component {
     super(props)
 
     this.state = {
-      color: COLORS[1],
+      color: COLORS[0],
       isMobile: false,
       isParticlesEnabled: true
     }

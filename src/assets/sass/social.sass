@@ -10,6 +10,8 @@
   display: flex
   height: inherit
   width: 100%
+  flex-direction: column
+  align-items: center
   &__list
     width: 100%
 
@@ -43,10 +45,16 @@
     display: flex
     align-items: center
     justify-content: center
-    color: darken($accent-color, 30%)
+    color: #fff
     background: darken($accent-color, 15%)
     border-radius: 50%
     text-decoration: none
+
+    &--big
+      width: 4em
+      height: 4em
+      i.fa
+        font-size: 2em
 
     &:hover
       background: darken($accent-color, 12%)

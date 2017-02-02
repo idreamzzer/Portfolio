@@ -15,34 +15,32 @@ class Social extends React.Component {
 
   render() {
 
-    let color = this.props.color
+    let color = this.context.color
 
     let styles = {
       item: {
         boxShadow: `0px 0px 10px ${tinycolor(color).darken(10).toString()}`
       },
       link: {
-        color: tinycolor(color).lighten(15).toString(),
         background: tinycolor(color).darken(15).toString(),
         ':hover': {
-          color: tinycolor(color).lighten(10).toString(),
           background: tinycolor(color).darken(12).toString()
         },
         ':active': {
-          color: tinycolor(color).lighten(5).toString(),
           background: tinycolor(color).darken(18).toString()
         }
-      }
+      },
     }
 
     let items = SOCIALS.map((item, i) => {
       return <li key={i} className="social__item" style={styles.item}>
-        <a key={i} href={item.href} className="social__link" style={styles.link} target="_blank"><i className={`fa fa-${item.className}`} aria-hidden="true"></i></a>
+        <a key={i} href={item.href} className={`social__link ${this.props.size === 'big' ? 'social__link--big' : ''}`} style={styles.link} target="_blank"><i className={`fa fa-${item.className}`} aria-hidden="true"></i></a>
       </li>
     })
 
     return (
-      <div className="social">
+      <div className={`social ${this.props.class}`}>
+        {(this.props.title) ? <h2 className="title" style={{color}}>{this.props.title}</h2> : null}
         <ul className="social__list">
           {items}
         </ul>
@@ -51,5 +49,9 @@ class Social extends React.Component {
   }
 
 }
+
+Social.contextTypes = {
+  color: React.PropTypes.string
+};
 
 export default Radium(Social);

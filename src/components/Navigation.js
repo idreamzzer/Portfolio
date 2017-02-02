@@ -31,6 +31,9 @@ class Navigation extends React.Component {
     this.state = {
       isNavActive: true
     }
+
+    this.onHover = this.onHover.bind(this)
+    this.onLeave = this.onLeave.bind(this)
   }
 
   handlerNavigation() {
@@ -41,19 +44,36 @@ class Navigation extends React.Component {
     }
   }
 
+  onHover(e) {
+    e.currentTarget.children[1].classList.add('navigation__overlay--active')
+  }
+  onLeave(e) {
+    e.currentTarget.children[1].classList.remove('navigation__overlay--active')
+  }
+
   render() {
+
+    let color = this.context.color
 
     let isNavActive = (this.state.isNavActive) ? '' : 'navigation--active'
 
     let renderItems = LINKS.map((link, i) => {
-      return <li key={i} className="navigation__item">
+      return <li key={i} className="navigation__item" onMouseOver={this.onHover} onMouseLeave={this.onLeave}>
               <Link to={link.to} className="navigation__link" activeClassName="navigation__link--active">{link.text}</Link>
-              <div className="navigation__overlay"></div>
+              <div className="navigation__overlay" style={{background: color}}></div>
             </li>
     })
 
     return (
-      <header className="header">
+      <CSSTransition
+        component="header"
+        className="header"
+        transitionName="transition"
+        transitionEnterTimeout={600}
+        transitionLeaveTimeout={600}
+        transitionAppear={true}
+        transitionAppearTimeout={1000}>
+
         <nav className={`navigation box header__navigation ${isNavActive}`}>
           <CSSTransition
             component="ul"
@@ -62,10 +82,10 @@ class Navigation extends React.Component {
             transitionEnterTimeout={600}
             transitionLeaveTimeout={600}
             transitionAppear={true}
-            transitionAppearTimeout={1000}>
-            <li className="navigation__item">
+            transitionAppearTimeout={400}>
+            <li className="navigation__item" onMouseOver={this.onHover} onMouseLeave={this.onLeave}>
               <IndexLink to="/" className="navigation__link" activeClassName="navigation__link--active">Главная</IndexLink>
-              <div className="navigation__overlay"></div>
+              <div className="navigation__overlay" style={{background: color}}></div>
             </li>
 
             {renderItems}
@@ -73,7 +93,7 @@ class Navigation extends React.Component {
         </nav>
 
         <div className="header__handler-navigation box" onClick={this.handlerNavigation.bind(this)}>x</div>
-      </header>
+      </CSSTransition>
 
     );
   }
