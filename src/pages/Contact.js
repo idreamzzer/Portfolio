@@ -7,7 +7,7 @@ import '../assets/sass/contact.sass'
 
 class Contact extends React.Component {
 
-  
+
 
   render() {
     return (

@@ -2,7 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const bodyParser = require('body-parser');
-
+const dotenv = require('dotenv');
+dotenv.load()
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -22,8 +23,6 @@ app.use(express.static(path.resolve(__dirname, 'build')));
 
 app.post('/sendmail', (req, res) => {
 
-
-
   from_email = new helper.Email("noreply@dreamzz.ru");
   to_email = new helper.Email("idreamzzer@gmail.com");
   subject = "Got message from dreamzz.ru";
@@ -38,9 +37,7 @@ app.post('/sendmail', (req, res) => {
   });
 
   sg.API(request, function(error, response) {
-    console.log(response.statusCode);
-    console.log(response.body);
-    console.log(response.headers);
+    if(error) console.error(error);
   })
 
 
