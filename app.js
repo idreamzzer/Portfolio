@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
+const fs = require('fs');
 const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
 dotenv.load()
@@ -42,6 +43,12 @@ app.post('/sendmail', (req, res) => {
 
 
 });
+
+app.get('/work/project/:name/demo', (req, res) => {
+  res.sendFile(path.join(__dirname, 'DemoProjects', req.params.name, 'index.html'), {root: ''}, function(err) {
+    console.log(err)
+  })
+})
 
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'build', 'index.html'));

@@ -49,6 +49,7 @@ class Project extends React.Component {
           <Link to={`/work/project/${prevProject}`} >prev</Link>
           <Link to={`/work/project/${nextProject}`} >next</Link>
         </div>
+
       </div>
     );
   }
