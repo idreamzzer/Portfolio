@@ -60,11 +60,7 @@ class ColorPicker extends React.Component {
       <div className="color-picker__palette">
         <div className="color-picker__palette-group box">
           <ColorPickerLine value={color} onDrag={this.onDrag.bind(this)} className="color-picker__palette-line" />
-          <ul className="color-picker__common-colors" style={styles.commonColors}>
-            {this.props.defaultcolors.map((clr, i) => {
-              return <li key={i} onClick={this.changeColor.bind(this, clr)} className="color-picker__common-color" style={{background: clr, boxShadow: `0px 0px 10px ${tinycolor(color).darken(30).toString()}`}}></li>
-            })}
-          </ul>
+
         </div>
 
         <div className="color-picker__handler-particles-group box">

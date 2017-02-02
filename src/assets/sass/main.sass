@@ -15,11 +15,47 @@ body
 .main
   position: relative
   z-index: 0
+  background: #fff
+
+  &__overlay
+    width: 100%
+    height: 100vh
+    z-index: 5
+    position: fixed
+    &-wrapper
+      width: 100%
+      height: 100%
+      position: relative
+    &-part
+      background: #fff
+      position: absolute
+      width: 0
+      height: 0
+      &--top
+        top: 0
+        left: 0
+        width: 100%
+        height: 20px
+      &--right
+        top: 0
+        right: 0
+        width: 20px
+        height: 100%
+      &--bottom
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 20px
+      &--left
+        top: 0
+        left: 0
+        width: 20px
+        height: 100%
 
 .color-picker
   position: fixed
-  top: 10px
-  left: 10px
+  top: 30px
+  left: 30px
 
   z-index: 10
 
@@ -36,7 +72,7 @@ body
 
 
 .content
-  z-index: 3
+  z-index: 6
   position: relative
 
   &__page
@@ -48,6 +84,7 @@ body
     transform: translateX(-50%)
     margin-top: 100px
     margin-bottom: 100px
+    padding: 20px
 
 .unknown
   &__box

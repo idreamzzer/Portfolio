@@ -54,28 +54,34 @@ class Item extends React.Component {
     super(props)
 
     this.state = {
-      isMobile: false
+      isMobile: false,
+      isMounted: false
     }
+
+    this.onResize = this.onResize.bind(this)
   }
 
   onResize() {
-    if (window.innerWidth <= 768) {
-      this.setState({isMobile: true})
-    } else {
-      this.setState({isMobile: false})
+    if (this.state.isMounted) {
+      if (window.innerWidth <= 768) {
+        this.setState({isMobile: true})
+      } else {
+        this.setState({isMobile: false})
+      }
+
     }
   }
 
   componentDidMount() {
     if (window.innerWidth <= 768) {
-      this.setState({isMobile: true})
+      this.setState({isMobile: true, isMounted: true})
     } else {
-      this.setState({isMobile: false})
+      this.setState({isMobile: false, isMounted: true})
     }
-    window.addEventListener("resize", this.onResize.bind(this))
+    window.addEventListener("resize", this.onResize)
   }
   componentWillUnmount() {
-    window.removeEventListener("resize", this.onResize.bind(this))
+    window.removeEventListener("resize", this.onResize)
   }
 
   render() {

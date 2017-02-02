@@ -3,6 +3,9 @@
 .react-color-picker__hue-spectrum
   box-sizing: border-box
 
+.react-color-picker
+  display: flex
+
 .react-color-picker *,
 .react-color-picker *:before,
 .react-color-picker *:after,
@@ -55,7 +58,7 @@
   background: -webkit-linear-gradient(top, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%)
   background: linear-gradient(to bottom, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%)
   cursor: pointer
-  margin-left: 0!important
+
   .react-color-picker__hue-spectrum .react-color-picker__hue-drag
     display: none
     position: absolute
@@ -74,7 +77,7 @@
 @import "fonts"
 
 .react-color-picker__saturation-spectrum
-  display: none
+  display: flex
 
 .color-picker
   display: -webkit-box
@@ -121,25 +124,15 @@
     display: -ms-flex
     display: -moz-flex
     display: flex
+    flex-direction: column
 
-  &__common-colors
-    list-style-type: none
-    max-height: 70%
-    margin: 0
-    padding: 0
-    background: darken($accent-color, 2%)
-    background: linear-gradient(to bottom, darken($accent-color, 2%), transparent)
-
-  &__common-color
-    width: 30px
-    height: 30px
-    box-shadow: 0px 0px 10px darken($accent-color, 30%)
 
   &__handler-particles
     width: 20px
     height: 20px
     background: #fff
     &-label
+      font-size: 12px
     &-group
       display: flex
       flex-direction: column
@@ -153,8 +146,6 @@
     flex-direction: column
     &-group
       display: flex
-      width: 63px
-
 
   &__palette-transition
     display: -webkit-box

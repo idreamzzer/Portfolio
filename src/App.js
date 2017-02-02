@@ -9,6 +9,7 @@ import particlesConfig from './assets/particlesjs-config.json'
 
 import ColorPicker from './components/ColorPicker'
 import Navigation from './components/Navigation'
+import Overlay from './components/Overlay'
 
 import './assets/sass/main.sass'
 import 'bootstrap-grid-only/bootstrap.css'
@@ -28,6 +29,10 @@ class App extends Component {
       isMobile: false,
       isParticlesEnabled: true
     }
+  }
+
+  getChildContext() {
+    return {color: this.state.color};
   }
 
   componentWillMount() {
@@ -105,6 +110,7 @@ class App extends Component {
 
         <div className="main">
 
+          <Overlay />
 
           <CSSTransition
             component="div"
@@ -140,6 +146,10 @@ class App extends Component {
       </div>
     );
   }
+}
+
+App.childContextTypes = {
+  color: React.PropTypes.string
 }
 
 export default App;

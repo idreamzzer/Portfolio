@@ -80,4 +80,8 @@ class Navigation extends React.Component {
 
 }
 
+Navigation.contextTypes = {
+  color: React.PropTypes.string
+}
+
 export default Navigation;
