@@ -2,14 +2,14 @@ import React from 'react';
 import tinycolor from 'tinycolor2';
 import {Link} from 'react-router'
 
-import PROJECTS from '../projects'
+import PROJECTS from '../data/PROJECTS'
 
 
 class Projects extends React.Component {
 
   render() {
 
-    let color = this.props.color
+    let color = this.context.color
 
     return (
       <section className="projects container">
@@ -32,9 +32,8 @@ class List extends React.Component {
   render() {
 
     let color = this.props.color
-
     let renderItems = PROJECTS.map((item) => {
-      return <Item key={item.id} id={item.id} title={item.title} text={item.text} imageSmall={item.imageSmall} color={color} />
+      return <Item key={item.id} id={item.dirName} title={item.title} subtitle={item.subtitle} imageSmall={item.imageSmall} color={color} />
     })
 
     return (
@@ -102,12 +101,12 @@ class Item extends React.Component {
 
     return (
       <li className="projects__item item box">
-        <Link to={`/work/project/${this.props.id}`} className="item__link">
+        <Link to={`/work/${this.props.id}`} className="item__link">
           <div className="item__overlay" style={styles.overlay}></div>
           <div className="item__img" style={styles.img}><div className="item__img-overlay"></div></div>
           <div className="item__description" style={styles.dscr}>
             <h3 className="item__title">{this.props.title}</h3>
-            <p className="item__text">{this.props.text}</p>
+            <p className="item__text">{this.props.subtitle}</p>
             <strong className="item__btn" style={styles.dscr}>Узнать больше...</strong>
           </div>
         </Link>
@@ -115,3 +114,7 @@ class Item extends React.Component {
     )
   }
 }
+
+Projects.contextTypes = {
+  color: React.PropTypes.string
+};

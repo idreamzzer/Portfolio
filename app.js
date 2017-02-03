@@ -44,10 +44,10 @@ app.post('/sendmail', (req, res) => {
 
 });
 
-app.get('/work/project/:name/demo', (req, res) => {
-  res.sendFile(path.join(__dirname, 'DemoProjects', req.params.name, 'index.html'), {root: ''}, function(err) {
-    console.log(err)
-  })
+app.get('/work/:name/demo', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'build', 'demoprojects', req.params.name, 'index.html'), function(err) {
+    if(err) console.log(err)
+  });
 })
 
 app.get('*', (req, res) => {
