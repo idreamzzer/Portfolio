@@ -1,92 +1,101 @@
-import imgSmall1 from '../assets/img/1.jpg'
-import imgSmall2 from '../assets/img/2.jpg'
-import imgSmall3 from '../assets/img/3.jpg'
-import imgSmall4 from '../assets/img/4.jpg'
-import imgSmall5 from '../assets/img/5.jpg'
-import imgSmall6 from '../assets/img/6.jpg'
-import imgSmall7 from '../assets/img/7.jpg'
-import imgSmall8 from '../assets/img/8.jpg'
+import imgThumb0 from '../assets/img/project-old_portfolio-thumb.jpg'
+import imgThumb1 from '../assets/img/project-fcc_portfolio-thumb.jpg'
+import imgThumb2 from '../assets/img/project-lifestyle-thumb.jpg'
+import imgThumb3 from '../assets/img/project-mountain-thumb.jpg'
+import imgThumb4 from '../assets/img/project-craftlance-thumb.jpg'
+import imgThumb5 from '../assets/img/project-clearcut-thumb.jpg'
+import imgThumb6 from '../assets/img/project-rounded-thumb.jpg'
+import imgThumb7 from '../assets/img/project-main-thumb.jpg'
+
+import img0 from '../assets/img/project-old_portfolio.jpg'
+import img1 from '../assets/img/project-fcc_portfolio.jpg'
+import img2 from '../assets/img/project-lifestyle.jpg'
+import img3 from '../assets/img/project-mountain.jpg'
+import img4 from '../assets/img/project-craftlance.jpg'
+import img5 from '../assets/img/project-clearcut.jpg'
+import img6 from '../assets/img/project-rounded.jpg'
+import img7 from '../assets/img/project-main.jpg'
 
 const PROJECTS = [
   {
     id: '0',
     dirName: 'old_portfolio',
-    imageSmall: imgSmall1,
-    imageBig: imgSmall1,
-    title: 'Мое первое портфолио',
-    subtitle: 'Какое-то описание проекта, его цель, инструменты и т.д.',
+    imageThumb: imgThumb0,
+    image: img0,
+    title: 'Мое портфолио',
+    subtitle: 'Мое прошлое серьезное портфолио',
     descr: 'Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. ',
-    tech: ['reactjs', 'html', 'css', 'js']
+    tech: ['html', 'css', 'js', 'jquery']
   },
   {
     id: '1',
-    dirName: 'lifestyle',
-    imageSmall: imgSmall2,
-    imageBig: imgSmall2,
-    title: 'LifeStyle',
-    subtitle: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ',
+    dirName: 'fcc_portfolio',
+    imageThumb: imgThumb1,
+    image: img1,
+    title: 'Портфолио для FreeCodeCamp',
+    subtitle: 'Портфолио выполненое для задания на FreeCodeCamp.com',
     descr: 'Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. ',
-    tech: ['reactjs', 'html', 'css', 'js']
+    tech: ['html', 'css', 'js', 'jquery']
   },
   {
     id: '2',
-    dirName: 'mountain',
-    imageSmall: imgSmall3,
-    imageBig: imgSmall3,
-    title: 'Mountain',
-    subtitle: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ',
+    dirName: 'lifestyle',
+    imageThumb: imgThumb2,
+    image: img2,
+    title: 'LifeStyle',
+    subtitle: 'Верстка из свободного PSD макета',
     descr: 'Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. ',
-    tech: ['reactjs', 'html', 'css', 'js']
+    tech: ['html', 'css', 'js']
   },
   {
     id: '3',
-    dirName: 'trhee',
-    imageSmall: imgSmall4,
-    imageBig: imgSmall4,
-    title: 'Lorem ipsum',
-    subtitle: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ',
+    dirName: 'mountain',
+    imageThumb: imgThumb3,
+    image: img3,
+    title: 'Mountain',
+    subtitle: 'Простая верстка с свободного PSD макета',
     descr: 'Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. ',
-    tech: ['reactjs', 'html', 'css', 'js']
+    tech: ['html', 'css']
   },
   {
     id: '4',
-    dirName: 'four',
-    imageSmall: imgSmall5,
-    imageBig: imgSmall5,
-    title: 'Lorem ipsum',
-    subtitle: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ',
+    dirName: 'craftlance',
+    imageThumb: imgThumb4,
+    image: img4,
+    title: 'Craftlance',
+    subtitle: 'Верстка из PSD макета',
     descr: 'Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. ',
-    tech: ['reactjs', 'html', 'css', 'js']
+    tech: ['html', 'css']
   },
   {
     id: '5',
-    dirName: 'five',
-    imageSmall: imgSmall6,
-    imageBig: imgSmall6,
-    title: 'Lorem ipsum',
-    subtitle: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ',
+    dirName: 'clearcut',
+    imageThumb: imgThumb5,
+    image: img5,
+    title: 'Clearcut',
+    subtitle: 'Верстка из PSD макета',
     descr: 'Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. ',
-    tech: ['reactjs', 'html', 'css', 'js']
+    tech: ['html', 'css', 'js', 'jquery']
   },
   {
     id: '6',
-    dirName: 'six',
-    imageSmall: imgSmall7,
-    imageBig: imgSmall7,
-    title: 'Lorem ipsum',
-    subtitle: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ',
+    dirName: 'rounded',
+    imageThumb: imgThumb6,
+    image: img6,
+    title: 'Rounded',
+    subtitle: 'Самая первая верстка, с которой и началась эпопея веб-дева :)',
     descr: 'Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. ',
-    tech: ['reactjs', 'html', 'css', 'js']
+    tech: ['html', 'css']
   },
   {
     id: '7',
-    dirName: 'last',
-    imageSmall: imgSmall8,
-    imageBig: imgSmall8,
-    title: 'Lorem ipsum',
-    subtitle: 'lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum ',
+    dirName: 'main',
+    imageThumb: imgThumb7,
+    image: img7,
+    title: 'Портфолио',
+    subtitle: 'Первый проект с использованием React',
     descr: 'Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. Какое-то дополнительное описание. ',
-    tech: ['reactjs', 'html', 'css', 'js']
+    tech: ['html', 'css', 'js', 'React']
   }
 ]
 

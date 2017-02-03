@@ -33,7 +33,7 @@ class List extends React.Component {
 
     let color = this.props.color
     let renderItems = PROJECTS.map((item) => {
-      return <Item key={item.id} id={item.dirName} title={item.title} subtitle={item.subtitle} imageSmall={item.imageSmall} color={color} />
+      return <Item key={item.id} id={item.dirName} title={item.title} subtitle={item.subtitle} imageThumb={item.imageThumb} color={color} />
     })
 
     return (
@@ -92,7 +92,7 @@ class Item extends React.Component {
         background: tinycolor(color).darken(20).toString()
       },
       img: {
-        backgroundImage: `url(${this.props.imageSmall})`
+        backgroundImage: `url(${this.props.imageThumb})`
       },
       dscr: {
         color: (this.state.isMobile) ? tinycolor(color).darken(20).toString() : '#fff'

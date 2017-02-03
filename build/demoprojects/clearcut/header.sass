@@ -1,0 +1,135 @@
+@import "bourbon"
+@import "sass/vars"
+@import "sass/base"
+
+//First screen styles
+
+.header
+  border-bottom: 1px solid #e2e2e2
+  background: #fff
+
+.header-top
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+  height: 80px
+
+  border-bottom: 1px solid $accent
+
+.navigation
+  height: 100%
+  &__list
+    display: flex
+    height: inherit
+    list-style-type: none
+    padding: 0
+    margin: 0
+
+  &__item
+
+  &__link
+    display: flex
+    align-items: center
+    height: 100%
+    padding: 0 20px
+    color: $font-color
+    text-transform: uppercase
+    &:hover, &:focus
+      text-decoration: none
+      background: $accent
+      color: #fff
+    &.isActive
+      background: $accent
+      color: #fff
+      text-decoration: none
+
+.header-title
+  margin: 40px 10%
+  text-align: center
+  font-size: 22px
+  font-weight: normal
+  font-style: italic
+  letter-spacing: 1px
+
+.header-slider
+  position: relative
+  padding-bottom: 75px
+  .slide
+    height: 350px
+    position: relative
+    background: $accent-bg
+
+    &__content
+      width: 40%
+      position: absolute
+      bottom: 20px
+      right: 80px
+    &__title
+      padding: 5px 20px
+      background: $accent
+      font-size: 22px
+      color: #fff
+    &__description
+      padding: 10px
+      font-size: 14px
+      background-color: #fff
+
+  .slick-arrow
+    width: 50px
+    height: 50px
+    position: absolute
+    top: calc(50% - 35px)
+    transform: translateY(-50%)
+
+    z-index: 1
+
+    border-radius: 50%
+    background: $accent-bg
+    border: 2px solid $accent
+    outline: 0
+
+    &.slick-prev
+      left: 20px
+      &::before
+        content: "<"
+        color: $accent
+        font-size: 30px
+
+    &.slick-next
+      right: 20px
+      &::before
+        content: ">"
+        margin-left: 5px
+        color: $accent
+        font-size: 30px
+
+  .slick-dots
+    display: flex
+    position: absolute
+    bottom: 55px
+    left: 50%
+    transform: translate(-50%, 50%)
+    margin: 0
+    padding: 0
+
+    list-style-type: none
+
+    li
+      margin-right: 5px
+      &:last-child
+        margin-right: 0
+
+      button
+        position: relative
+        width: 15px
+        height: 15px
+        text-indent: -9999px
+        white-space: nowrap
+        font-size: 0
+        background-color: $accent
+        border: 2px solid $accent
+        border-radius: 50%
+        outline: 0
+        &.isActive
+          background-color: #fff

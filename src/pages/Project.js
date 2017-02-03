@@ -66,7 +66,7 @@ class Project extends React.Component {
   }
 
   render() {
-    let {dirName, title, subtitle, imageBig, descr} = this.state.project
+    let {dirName, title, subtitle, image, descr} = this.state.project
     let {prevProject, nextProject} = this.state
     let color = this.context.color
 
@@ -111,8 +111,8 @@ class Project extends React.Component {
 
             <section className="project__main">
               <div className="project__image-box box">
-                <Link to={`/work/${dirName}/demo`} style={styles.overlay} className={`project__image-overlay ${(isImageOverlayActive)}`} onMouseOver={this.onHoverImage} onMouseLeave={this.onLeaveImage} >Посмотреть демо</Link>
-                <img src={imageBig} alt={title} className="project__image" />
+                <Link to={`/work/${dirName}/demo`} target="_blank" style={styles.overlay} className={`project__image-overlay ${(isImageOverlayActive)}`} onMouseOver={this.onHoverImage} onMouseLeave={this.onLeaveImage} >Посмотреть демо</Link>
+                <img src={image} alt={title} className="project__image" />
               </div>
 
               <div className="project__info box">
