@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DreamZz's Portfolio</title>
+    <link rel="stylesheet" href="/demoprojects/old_portfolio/css/style.min.css">
+    <link rel="stylesheet" href="/demoprojects/old_portfolio/css/media.min.css">
+    <link rel="stylesheet" href="/demoprojects/old_portfolio/css/normalize.min.css">
+    <link rel="stylesheet" href="/demoprojects/old_portfolio/css/animate.min.css">
+    <link rel="stylesheet" href="/demoprojects/old_portfolio/css/lightbox.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:900|Roboto+Condensed:400,700|Russo+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/39197650" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <!-- preloader -->
+    <script>
+        $(window).load(function() {
+            setTimeout(function() {
+                $('#preloader').fadeOut('slow', function() {});
+            }, 1000);
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="preloader">
+        <div><span></span></div>
+    </div>
+
+    <div class="side-line side-line--top"></div>
+    <div class="side-line side-line--right"></div>
+    <div class="side-line side-line--bottom"></div>
+    <div class="side-line side-line--left"></div>
+
+    <div class="wrapper" id="wrapper">
+
+        <div id="particles-js"></div>
+
+        <div class="sidebar">
+            <button class="sidebar__btn"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <div class="sidebar__content">
+                <h3 class="box__title">Напишите мне</h3>
+                <form class="feedback" action="https://formspree.io/idreamzzer@gmail.com" method="POST">
+                    <input type="text" name="name" placeholder="Как вас зовут?">
+                    <input type="text" name="_replyto" placeholder="Адрес электронной почты" required="Заполните адрес электронной почты" />
+                    <textarea name="message" rows="5" placeholder="Ваше сообщение" required=""></textarea>
+                    <input type="submit" value="Отправить">
+                    <input type="hidden" name="_next" value="#contacts" />
+                </form>
+                <ul class="social">
+                    <li class="social__item"><a target="_blank" href="https://vk.com/dreamzzer" class="social__link"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
+                    <li class="social__item"><a target="_blank" href="https://www.facebook.com/uskov.alx" class="social__link"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li class="social__item"><a target="_blank" href="https://twitter.com/idreamzzer" class="social__link"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li class="social__item"><a target="_blank" href="https://github.com/idreamzzer" class="social__link"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mobile-nav">
+            <button class="mobile-nav__btn"><i class="fa fa-times" aria-hidden="true"></i></button>
+            <nav class="mobile-nav__inner">
+                <ul class="mobile-nav__list">
+                    <li class="mobile-nav__item">
+                        <a href="#home" class="mobile-nav__link">Главная</a>
+                    </li>
+                    <li class="mobile-nav__item">
+                        <a href="#about" class="mobile-nav__link">Обо мне</a>
+                    </li>
+                    <li class="mobile-nav__item">
+                        <a href="#portfolio" class="mobile-nav__link">Портфолио</a>
+                    </li>
+                    <li class="mobile-nav__item">
+                        <a href="#contacts" class="mobile-nav__link">Контакты</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+
+
+        <header class="header" id="header">
+
+            <div class="header__bar">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-2 col-md-3 col-xs-3">
+                            <a href="#home" class="logo header__logo">DZ</a>
+                        </div>
+
+                        <div class="col-lg-10 col-md-9 col-xs-9">
+                            <nav class="nav header__nav">
+                                <ul class="nav__list">
+                                    <li class="nav__item"><a href="#about" class="nav__link">Обо мне</a></li>
+                                    <li class="nav__item"><a href="#portfolio" class="nav__link">Портфолио</a></li>
+                                    <li class="nav__item"><a href="#contacts" class="nav__link">Контакты</a></li>
+                                </ul>
+                                <button class="btn-mobile-nav btn">Меню</button>
+                                <button class="btn-sidebar btn"><i class="fa fa-envelope" aria-hidden="true"></i></button>
+                            </nav>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+
+        <div class="content">
+
+
+            <section id="home" class="home">
+                <h2 class="wow fadeIn" data-wow-delay="2.1s">Здравствуйте!</h2>
+                <a href="http://dreamzz.ru" target="_blank" style="position: relative; color: #fff; top: 58%; font-size: 30px; text-decoration: underline;">Попробуйте новый сайт</a>
+                <a href="#about" class="wow fadeIn home__link" data-wow-delay="2.5s"><i class="fa fa-arrow-down wow bounce infinite" data-wow-duration="2s" data-wow-delay="2s" aria-hidden="true"></i></a>
+            </section>
+
+            <section id="about" class="about section">
+                <h2 class="section__title wow fadeIn">Обо мне</h2>
+                <div class="container">
+
+                    <div class="box wow fadeInUp">
+                        <div class="about__profile">
+                            <span>Добро пожаловать на мой сайт!</span>
+                            <h1>Меня зовут Усков Алексей.</h1>
+                            <p>Мне 24 года и я из города Краснодара. Занимаюсь веб-разработкой более года.</p>
+                            <p>В 2015 году я окончил высшее учебное заведение - ИМСИТ по специальности «ПO ВТ и АС». В процессе учёбы я заинтересовался Веб-технологиями. С тех пор это увлечение стало для меня главным: я изучил множество литературы, прочитал
+                                уйму статей на русском и иностранных языках, прошёл различные онлайн курсы, провел бесчисленное количество часов за просмотром видео-уроков и мастер-классов от настоящих профессионалов этого дела!</p>
+                            <p>Я продолжаю совершенствоваться в этой области и с огромным удовольствием получаю новые знания! Спасибо, что зашли и оценили мой труд!</p>
+                            <a href="#contacts">Связаться со мной</a>
+                        </div>
+                        <ul class="social about__social">
+                            <li class="social__item"><a target="_blank" href="https://vk.com/dreamzzer" class="social__link"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
+                            <li class="social__item"><a target="_blank" href="https://www.facebook.com/uskov.alx" class="social__link"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li class="social__item"><a target="_blank" href="https://twitter.com/idreamzzer" class="social__link"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li class="social__item"><a target="_blank" href="https://github.com/idreamzzer" class="social__link"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="skills box clearfix wow fadeInLeft">
+                                <h3 class="box__title">Навыки</h3>
+                                <div class="box__content">
+                                    <span class="skills__title">HTML & CSS</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="81" aria-valuemin="0" aria-valuemax="100" style="width:81%">
+                                            81%
+                                        </div>
+                                    </div>
+                                    <span class="skills__title">JavaScript & jQuery</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100" style="width:72%">
+                                            72%
+                                        </div>
+                                    </div>
+                                    <span class="skills__title">PHP & MySQL</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100" style="width:32%">
+                                            32%
+                                        </div>
+                                    </div>
+                                    <span class="skills__title">WordPress</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" style="width:35%">
+                                            35%
+                                        </div>
+                                    </div>
+                                    <span class="skills__title">ReactJS</span>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="27" aria-valuemin="0" aria-valuemax="100" style="width:27%">
+                                            27%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="adv-skills box wow fadeInRight">
+                                <h3 class="box__title">Дополнительные навыки</h3>
+                                <div class="box__content">
+                                    <p><strong>Знание программ и технологий: </strong>Photoshop, Atom, SASS/SCSS, Gulp, Bootstrap, Git.</p>
+                                    <p><strong>Языки: </strong>русский, английский(чтение технической документации, редко со словарем).</p>
+                                    <p><strong>Личные качества: </strong>желание работать и самосовершенствоваться, аккуратность, усидчивость, инициативность.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="portfolio" class="portfolio section section--bg-custom">
+
+                <h2 class="section__title wow fadeIn section__title--white">Портфолио</h2>
+                <div class="controls wow slideInUp">
+                    <button class="filter" data-filter="all">Все</button>
+                    <button class="filter" data-filter=".category-1">Верстка</button>
+                    <button class="filter" data-filter=".category-2">WordPress</button>
+                </div>
+                <div id="Container" class="container wow fadeInUp">
+                    <div class="mix category-1" data-myorder="1">
+                        <a href="/demoprojects/old_portfolio/img/portfolio/fcc-portfolio.jpg" data-lightbox="cat1" data-title="Портфолио для FreeCodeCamp.com"><img src="/demoprojects/old_portfolio/img/portfolio/fcc-portfolio-thumb.jpg" alt=""></a>
+                    </div>
+                    <div class="mix category-1" data-myorder="2">
+                        <a href="/demoprojects/old_portfolio/img/portfolio/lifestyle.jpg" data-lightbox="cat1" data-title="Верстка с psd-шаблона LifeStyle"><img src="/demoprojects/old_portfolio/img/portfolio/lifestyle-thumb.jpg" alt=""></a>
+                    </div>
+                    <div class="mix category-1" data-myorder="3">
+                        <a href="/demoprojects/old_portfolio/img/portfolio/mountain.jpg" data-lightbox="cat1" data-title="Верстка с psd-шаблона Mountain"><img src="/demoprojects/old_portfolio/img/portfolio/mountain-thumb.jpg" alt=""></a>
+                    </div>
+                    <div class="mix category-1" data-myorder="4">
+                        <a href="/demoprojects/old_portfolio/img/portfolio/rounded.jpg" data-lightbox="cat1" data-title="Верстка с psd-шаблона Rounded"><img src="/demoprojects/old_portfolio/img/portfolio/rounded-thumb.jpg" alt=""></a>
+                    </div>
+
+                    <div class="gap"></div>
+                    <div class="gap"></div>
+                </div>
+            </section>
+
+
+
+            <section id="contacts" class="contacts section">
+                <h2 class="section__title wow fadeIn">Контакты</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="box wow fadeInLeft">
+                                <h3 class="box__title">Напишите мне</h3>
+                                <form class="feedback" action="https://formspree.io/idreamzzer@gmail.com" method="POST">
+                                    <input type="text" name="name" placeholder="Как вас зовут?">
+                                    <input type="text" name="_replyto" placeholder="Адрес электронной почты" required="Заполните адрес электронной почты" />
+                                    <textarea name="message" rows="5" placeholder="Ваше сообщение" required=""></textarea>
+                                    <input type="submit" value="Отправить">
+                                    <input type="hidden" name="_next" value="#contacts" />
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="box wow fadeInRight">
+                                <ul class="address">
+                                    <li>
+                                        <span>Почта:</span>
+                                        <a target="_blank" href="mailto:idreamzzer@gmail.com">idreamzzer@gmail.com</a>
+                                    </li>
+                                    <li>
+                                        <span>Телефон:</span>
+                                        <a target="_blank" href="tel:+7(918)9688292">+7(918)968-82-92</a>
+                                    </li>
+                                    <li>
+                                        <span>Skype:</span>
+                                        <a target="_blank" href="skype:dreamzz92">dreamzz92</a>
+                                    </li>
+                                    <li>
+                                        <span>Адрес:</span>
+                                        <a target="_blank" href="https://maps.google.com/maps?ll=45.037631,39.097278&z=16&t=m&hl=ru-RU&gl=US&mapclient=embed&q=%D1%83%D0%BB.%20%D0%A2%D1%8E%D0%BB%D1%8F%D0%B5%D0%B2%D0%B0%2C%2016%D0%BA1%20%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B4%D0%B0%D1%80%20%D0%9A%D1%80%D0%B0%D1%81%D0%BD%D0%BE%D0%B4%D0%B0%D1%80%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BA%D1%80%D0%B0%D0%B9%2C%20%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F%20350080">г. Краснодар, ул. Тюляева 16/1, кв. 97</a>
+                                    </li>
+                                </ul>
+                                <iframe class="map" width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJwSs8U-9a8EARAAQrj4vUufo&key=AIzaSyD_7jia7xfKfl_0lXaEHHiWR0qN2ZK4eeQ" allowfullscreen></iframe>
+                                <ul class="social about__social">
+                                    <li class="social__item"><a target="_blank" href="https://vk.com/dreamzzer" class="social__link"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
+                                    <li class="social__item"><a target="_blank" href="https://www.facebook.com/uskov.alx" class="social__link"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li class="social__item"><a target="_blank" href="https://twitter.com/idreamzzer" class="social__link"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                    <li class="social__item"><a target="_blank" href="https://github.com/idreamzzer" class="social__link"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </div>
+
+        <footer class="footer">
+            <small>© Copyright 2016, Developed by DreamZz</small>
+        </footer>
+
+
+
+        <div class="overlay"></div>
+
+    </div>
+
+    </div>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="/demoprojects/old_portfolio/js/main.min.js"></script>
+    <script src="/demoprojects/old_portfolio/js/jquery.waypoints.min.js"></script>
+    <script src="/demoprojects/old_portfolio/js/jquery.mixitup.min.js"></script>
+    <script src="/demoprojects/old_portfolio/js/particles.min.js"></script>
+    <script src="/demoprojects/old_portfolio/js/jquery.smooth-scroll.min.js"></script>
+    <script src="/demoprojects/old_portfolio/js/lightbox.min.js"></script>
+    <script src="/demoprojects/old_portfolio/js/wow.min.js"></script>
+</body>
+
+</html>
