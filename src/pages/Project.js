@@ -93,6 +93,8 @@ class Project extends React.Component {
       }
     }
 
+    let linkToDemo = this.state.project.linkToDemo ? this.state.project.linkToDemo : `/work/${dirName}/demo`
+
     let renderTech = this.state.project.tech
     ? <ul className="project__tech">{this.state.project.tech.map((item, i) => {
       return <li key={i} className="project__tech-item" style={styles.tech}>{item}</li>
@@ -111,7 +113,7 @@ class Project extends React.Component {
 
             <section className="project__main">
               <div className="project__image-box box">
-                <Link to={`/work/${dirName}/demo`} target="_blank" style={styles.overlay} className={`project__image-overlay ${(isImageOverlayActive)}`} onMouseOver={this.onHoverImage} onMouseLeave={this.onLeaveImage} >Посмотреть демо</Link>
+                <Link to={linkToDemo} target="_blank" style={styles.overlay} className={`project__image-overlay ${(isImageOverlayActive)}`} onMouseOver={this.onHoverImage} onMouseLeave={this.onLeaveImage} >Посмотреть демо</Link>
                 <img src={image} alt={title} className="project__image" />
               </div>
 
@@ -122,7 +124,7 @@ class Project extends React.Component {
                   <p className="project__description-text">{descr}</p>
                   {renderTech}
                 </div>
-                <Link to={`/work/${dirName}/demo`} target="_blank" className="project__demo btn" style={styles.btn} onMouseOver={this.onHoverLink} onMouseLeave={this.onLeaveLink}>Посмотреть демо</Link>
+                <Link to={linkToDemo} target="_blank" className="project__demo btn" style={styles.btn} onMouseOver={this.onHoverLink} onMouseLeave={this.onLeaveLink}>Посмотреть демо</Link>
               </div>
             </section>
 

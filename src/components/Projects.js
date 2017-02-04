@@ -89,7 +89,7 @@ class Item extends React.Component {
 
     let styles = {
       overlay: {
-        background: tinycolor(color).darken(20).toString()
+        background: tinycolor(color).darken(30).toString()
       },
       img: {
         backgroundImage: `url(${this.props.imageThumb})`

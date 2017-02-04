@@ -90,6 +90,7 @@ const PROJECTS = [
   {
     id: '7',
     dirName: 'main',
+    linkToDemo: '/',
     imageThumb: imgThumb7,
     image: img7,
     title: 'Портфолио',
