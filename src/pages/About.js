@@ -1,97 +1,12 @@
 import React from 'react';
 import {Link} from 'react-router'
+import { Circle } from 'rc-progress';
+import tinycolor from 'tinycolor2'
 
 import '../assets/sass/about.sass'
 
+import { RESUMELIST, SERVICELIST, SKILLSLIST, ADVSKILLSLIST, TESTIMONIALS } from '../data/ABOUTME'
 
-
-const RESUMELIST = [
-  {
-    'title': 'Учеба в академии ИМСИТ',
-    'date': '2010-2015',
-    'descrition': 'Учеба по специальности "Разработка вычислительной техники и автоматизированных систем" с присвоением квалификации "Инженер".'
-  },
-  {
-    'title': 'Изучение веб-разработки и работа на фрилансе',
-    'date': '2015-2017',
-    'descrition': 'Чтение технической литературы, просмотр видеоуроков и прохождение онлайн-курсов. Параллельно работа на фрилансе.'
-  },
-  {
-    'title': 'Ваша компания может быть здесь',
-    'date': '2017-20__',
-    'descrition': 'Постижение дзена в области веб-программирования.'
-  }
-]
-
-const SERVICELIST = [
-  {
-    direction: 'Создание сайтов',
-    list: [
-      {
-        title: 'Landing-page',
-        price: '0000'
-      },
-      {
-        title: 'Сайт-визитка',
-        price: '0000'
-      },
-      {
-        title: 'Интернет-магазин',
-        price: '00000'
-      }
-    ]
-  }
-]
-
-const SKILLSLIST = [
-  {
-    title: 'HTML5',
-    percent: '90'
-  },
-  {
-    title: 'CSS3',
-    percent: '85'
-  },
-  {
-    title: 'JavaScript',
-    percent: '79'
-  },
-  {
-    title: 'Jquery',
-    percent: '62'
-  },
-  {
-    title: 'React',
-    percent: '75'
-  },
-  {
-    title: 'Photoshop',
-    percent: '31'
-  }
-]
-
-const TESTIMONIALS = [
-  {
-    name: 'Василий',
-    image: 'some image',
-    'text': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-  },
-  {
-    name: 'Василий',
-    image: 'some image',
-    'text': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-  },
-  {
-    name: 'Василий',
-    image: 'some image',
-    'text': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-  },
-  {
-    name: 'Василий',
-    image: 'some image',
-    'text': 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
-  }
-]
 
 class About extends React.Component {
 
@@ -100,41 +15,38 @@ class About extends React.Component {
     return (
       <div className="about content__page">
         <div className="container">
-          <section className="about-me section box">
-            <h2 className="section__title">Обо мне</h2>
-            <h3 className="about-me__name">Усков Алексей</h3>
-            <p className="about-me__job-name">Веб-разработчик</p>
-            <p className="about-me__description">Мне 24 года и я из города Краснодара. Занимаюсь веб-разработкой более года.
-              <br />
-              В 2015 году я окончил высшее учебное заведение - ИМСИТ по специальности «ПO ВТ и АС». В процессе учёбы я заинтересовался Веб-технологиями. С тех пор это увлечение стало для меня главным: я изучил множество литературы, прочитал уйму статей на русском и иностранных языках, прошёл различные онлайн курсы, провел бесчисленное количество часов за просмотром видео-уроков и мастер-классов от настоящих профессионалов этого дела!
-              <br />
-              Я продолжаю совершенствоваться в этой области и с огромным удовольствием получаю новые знания! Спасибо, что зашли и оценили мой труд!
-            </p>
-            <div className="about-me__link-group">
-              <Link to="/work" className="about-me__link btn">Мое портфолио</Link>
-              <Link to="/contact" className="about-me__link btn">Связаться со мной</Link>
+
+          <div className="row">
+            <div className="col-md-6">
+              <AboutMe color={this.props.color} />
             </div>
-          </section>
 
-          <section className="resume section box">
-            <h2 className="section__title">Резюме</h2>
-            <ResumeList />
-          </section>
+            <div className="col-md-6">
+              <Resume color={this.props.color} />
+            </div>
+          </div>
 
-          <section className="services section box">
-            <h2 className="section__title">Услуги</h2>
-            <ServiceList />
-          </section>
+          <div className="row">
+            <div className="col-sm-6 col-sm-offset-3">
+              <Service color={this.props.color} />
+            </div>
+          </div>
 
-          <section className="services section box">
-            <h2 className="section__title">Навыки</h2>
-            <SkillsList />
-          </section>
+          <div className="row">
 
-          <section className="services section box">
-            <h2 className="section__title">Отзывы</h2>
-            <Testimonials />
-          </section>
+            <div className="col-md-6">
+              <Skills color={this.props.color} />
+            </div>
+
+            <div className="col-md-6">
+              <AdvSkills color={this.props.color} />
+            </div>
+
+          </div>
+
+
+          {/* <Testimonials color={this.props.color} /> */}
+
         </div>
       </div>
     );
@@ -147,12 +59,64 @@ export default About;
 
 
 
-class ResumeList extends React.Component {
+class AboutMe extends React.Component {
+
+  constructor(props) {
+    super(props)
+
+
+    this.onMouseOver = this.onMouseOver.bind(this)
+    this.onMouseLeave = this.onMouseLeave.bind(this)
+  }
+
+  onMouseOver(e) {
+    e.target.style.color = this.props.color
+  }
+  onMouseLeave(e) {
+    e.target.style.color = '#fff'
+  }
 
   render() {
+    let color = this.props.color
+
+    let styles = {
+      link: {
+        borderColor: tinycolor(color).lighten(20).toString(),
+        color: '#fff'
+      }
+    }
+
+    return (
+      <section className="about-me section box">
+        <h2 className="section__title" style={{color}}>Обо мне</h2>
+        <h3 className="about-me__name" style={{color}}>Усков Алексей</h3>
+        <p className="about-me__job-name">Веб-разработчик</p>
+        <div className="about-me__description">
+          <p>Мне 24 года и я из города Краснодара. Занимаюсь веб-разработкой более года.</p>
+          <p>В 2015 году я окончил высшее учебное заведение - ИМСИТ по специальности «ПO ВТ и АС». В процессе учёбы я заинтересовался Веб-технологиями. С тех пор это увлечение стало для меня главным: я изучил множество литературы, прочитал уйму статей на русском и иностранных языках, прошёл различные онлайн курсы, провел бесчисленное количество часов за просмотром видео-уроков и мастер-классов от настоящих профессионалов этого дела!</p>
+          <p>Я продолжаю совершенствоваться в этой области и с огромным удовольствием получаю новые знания! Спасибо, что зашли и оценили мой труд!</p>
+        </div>
+        <div className="about-me__link-group" style={{backgroundColor: color}}>
+          <Link to="/work" className="about-me__link btn" onMouseOver={this.onMouseOver} onMouseLeave={this.onMouseLeave} style={styles.link}>Мое портфолио</Link>
+          <Link to="/contact" className="about-me__link btn" onMouseOver={this.onMouseOver} onMouseLeave={this.onMouseLeave} style={styles.link}>Связаться со мной</Link>
+        </div>
+      </section>
+    );
+  }
+
+}
+
+
+
+class Resume extends React.Component {
+
+  render() {
+    let color = this.props.color
+
     let items = RESUMELIST ? RESUMELIST.map((item, i) => {
-      return <li key={i}>
-                <h3>{item.title}</h3>
+      return <li key={i} className="resume__item">
+                <div className="resume__line" style={{backgroundColor: color}}></div>
+                <h3 style={{color}}>{item.title}</h3>
                 <span>{item.date}</span>
                 <p>{item.descrition}</p>
              </li>
@@ -160,9 +124,13 @@ class ResumeList extends React.Component {
     : null
 
     return (
-      <ul>
-        {items}
-      </ul>
+      <section className="resume section box">
+        <h2 className="section__title" style={{color}}>Резюме</h2>
+        <ul className="resume__list">
+          {items}
+        </ul>
+      </section>
+
     );
   }
 
@@ -171,63 +139,100 @@ class ResumeList extends React.Component {
 
 
 
-class ServiceList extends React.Component {
+class Service extends React.Component {
 
   render() {
+
+    let color = this.props.color
+
+    // dafug need fix it later
     let servicelist = SERVICELIST ? SERVICELIST.map((item, i) => {
-      return <li key={i}>
-        <h3>{item.direction}</h3>
-        <ServiceItems items={item.list} />
+      return <li key={i} className="services__item">
+        <h3 className="services__title" style={{color}}>{item.direction}</h3>
+        {item.list ? <ul className="services__sublist"> {item.list.map((serviceitem, j) => {
+                          return <li key={j} className="services__subitem">
+                            <h4 className="services__subtitle" style={{color: tinycolor(color).darken(30).toString()}}>{serviceitem.title}</h4>
+                            <div className="services__line" style={{borderColor: color}}></div>
+                            <span className="services__price" style={{color}}>{serviceitem.price}</span>
+                          </li>
+                        })}
+                     </ul>
+                   : null}
       </li>
     })
     : null
 
     return (
-      <ul>
-        {servicelist}
-      </ul>
-    );
-  }
-}
-class ServiceItems extends React.Component {
-
-  render() {
-    let serviceitems = this.props.items ? this.props.items.map((item, i) => {
-      return <li key={i}>
-        <h4>{item.title}</h4>
-        <span>{item.price}</span>
-      </li>
-    })
-    : null
-
-    return (
-      <ul>
-        {serviceitems}
-      </ul>
+      <section className="services section box">
+        <h2 className="section__title" style={{color}}>Услуги</h2>
+        <ul className="services__list">
+          {servicelist}
+        </ul>
+      </section>
     );
   }
 }
 
 
 
-
-class SkillsList extends React.Component {
+class Skills extends React.Component {
 
   render() {
+    let color = this.props.color
+
     let skillsitems = SKILLSLIST ? SKILLSLIST.map((item, i) => {
-      return <li key={i}>
-        <h5>{item.title}</h5>
-        <span>{item.percent}%</span>
+      return <li key={i} className="skills__item">
+        <Circle className="skills__circle" percent={item.percent} strokeWidth="4" strokeColor={color} />
+        <span className="skills__title" style={{color: tinycolor(color).darken(30).toString()}}>{item.title}</span>
       </li>
     })
     : null
 
     return (
-      <ul>
-        {skillsitems}
-      </ul>
+      <section className="skills section box">
+        <h2 className="section__title" style={{color}}>Навыки</h2>
+        <ul className="skills__list">
+          {skillsitems}
+        </ul>
+      </section>
+
     );
   }
+}
+
+
+
+class AdvSkills extends React.Component {
+
+  render() {
+    let color = this.props.color
+
+    let advskillsitems = ADVSKILLSLIST ? ADVSKILLSLIST.map((item, i) => {
+      return <li key={i} className="advskills__item" style={{backgroundColor: color, color: '#fff'}}>
+        <h5 className="advskills__text">{item}</h5>
+      </li>
+    })
+    : null
+    return (
+      <section className="advskills section box">
+        <h2 className="section__title" style={{color}}>Дополнительно</h2>
+        <h3 className="advskills__subtitle" style={{color: tinycolor(color).darken(40).toString()}}>Знаком с технологиями</h3>
+        <ul className="advskills__list">
+          {advskillsitems}
+        </ul>
+        <h3 className="advskills__subtitle" style={{color: tinycolor(color).darken(40).toString()}}>Владею языками</h3>
+        <ul className="advskills__lang">
+          <li><span style={{color}}>Русский язык</span> - родной язык</li>
+          <li><span style={{color}}>Английский язык</span> - чтение технической документации, редко со словарем</li>
+        </ul>
+        <div className="advskills__other">
+          <h3 className="advskills__subtitle" style={{color: tinycolor(color).darken(40).toString()}}>Прочее</h3>
+          <p>Знаком с различными <span style={{color}}>Linux</span> диструбутивами на уровне администрирования сервера(этот сайт расположен и настроен на <span style={{color}}>VPS</span>).</p>
+        </div>
+      </section>
+    );
+  }
+
 }
 
 
@@ -236,6 +241,8 @@ class SkillsList extends React.Component {
 class Testimonials extends React.Component {
 
   render() {
+    let color = this.props.color
+
     let items = TESTIMONIALS ? TESTIMONIALS.map((item, i) => {
       return <li key={i}>
         <span>{item.image}</span>
@@ -246,9 +253,12 @@ class Testimonials extends React.Component {
     : null
 
     return (
-      <ul>
-        {items}
-      </ul>
+      <section className="services section box">
+        <h2 className="section__title" style={{color}}>Отзывы</h2>
+        <ul>
+          {items}
+        </ul>
+      </section>
     );
   }
 

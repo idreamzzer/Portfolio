@@ -4,24 +4,7 @@ import CSSTransition from 'react-addons-css-transition-group'
 
 import '../assets/sass/navigation.sass'
 
-const LINKS = [
-  {
-    to: '/about',
-    text: 'Обо мне'
-  },
-  {
-    to: '/work',
-    text: 'Мои работы'
-  },
-  {
-    to: '/contact',
-    text: 'Контакты'
-  },
-  {
-    to: '/todo',
-    text: 'TODO'
-  }
-]
+import LINKS from '../data/LINKS'
 
 class Navigation extends React.Component {
 

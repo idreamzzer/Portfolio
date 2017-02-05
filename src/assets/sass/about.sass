@@ -1,2 +1,200 @@
+@import "vars"
+
 .about
-  padding-top: 100px
+  padding-top: 150px
+  section
+    margin-bottom: 50px
+
+.about-me
+
+  &__name
+    text-align: center
+    margin-bottom: 0
+    color: $accent-color
+  &__job-name
+    margin-top: 0
+    margin-bottom: 25px
+    text-align: center
+    font-style: italic
+
+  &__description
+    padding: 0 35px
+    margin-bottom: 50px
+    p
+      margin-bottom: 5px
+      text-indent: 30px
+      line-height: 1.5
+
+  &__link-group
+    background: $accent-color
+    display: flex
+    justify-content: center
+    width: 100%
+    padding: 30px 0
+    border-bottom-right-radius: 8px
+    border-bottom-left-radius: 8px
+
+    @media (max-width: 580px)
+      flex-direction: column
+      .about-me__link
+        margin-bottom: 15px
+        margin-left: 15px
+        margin-right: 15px
+        &:last-child
+          margin-bottom: 0
+          margin-right: 15px
+
+  &__link
+    border-color: lighten($accent-color, 5%)
+    text-align: center
+    color: #fff
+    margin-right: 10px
+    &:hover
+      color: $accent-color
+      background: #fff
+    &:last-child
+      margin-right: 0
+
+
+
+.resume
+  padding: 35px 0
+  &__list
+    list-style-type: none
+    margin: 0
+    padding: 0
+  &__item
+    margin-bottom: 30px
+    padding: 30px 30px 0
+    position: relative
+    transition: all .3s
+    &:last-child
+      margin-bottom: 0
+    h3
+      margin: 0 0 10px
+      color: $accent-color
+    span
+      letter-spacing: 1.2px
+      font-style: italic
+      font-size: 14px
+    p
+      margin: 10px 0
+  &__line
+    position: absolute
+    top: 0
+    left: 0
+    height: 2px
+    width: 100%
+    background: $accent-color
+
+
+.services
+  padding-bottom: 35px
+  &__list
+    margin: 0
+    padding: 0
+    list-style-type: none
+    display: flex
+    justify-content: center
+    align-items: center
+  &__item
+  &__title
+    color: $accent-color
+    text-align: center
+  &__sublist
+    margin: 0
+    padding: 0
+    list-style-type: none
+  &__subitem
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+  &__subtitle
+    color: darken($accent-color, 30%)
+    padding-right: 10px
+    white-space: nowrap
+  &__price
+    display: inline-block
+    padding-left: 10px
+    white-space: nowrap
+    color: $accent-color
+    font-family: Comfortaa-bold
+    &::before
+      content: 'от '
+      color: #333
+      font-family: Comfortaa
+    &::after
+      content: ' руб.'
+      color: #333
+      font-family: Comfortaa
+  &__line
+    height: 2px
+    width: 100%
+    min-width: 10px
+    border: 2px dotted $accent-color
+
+
+.skills
+  padding-bottom: 35px
+  &__list
+    padding: 0
+    margin: 0
+    list-style-type: none
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-wrap: wrap
+  &__item
+    width: 150px
+    margin-right: 10px
+    margin-bottom: 10px
+    position: relative
+  &__circle
+  &__title
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    color: $accent-color
+    font-family: Comfortaa-bold
+
+.advskills
+  padding: 35px 30px
+  &__subtitle
+    margin-bottom: 10px
+    color: $accent-color
+    text-align: center
+  &__list
+    padding: 0
+    margin: 0 0 30px
+    list-style-type: none
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    align-items: center
+  &__item
+    border-radius: 5px
+    padding: 5px 10px
+    margin: 0px 5px 5px 0px
+    background: $accent-color
+    color: #fff
+
+  &__text
+    margin: 0
+    padding: 0
+
+  &__lang
+    margin: 0
+    padding: 0
+    list-style-type: none
+    li
+      margin-bottom: 10px
+    span
+      color: $accent-color
+
+  &__other
+    span
+      color: $accent-color
+    p
+      text-indent: 20px
